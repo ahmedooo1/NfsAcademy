@@ -1,0 +1,27 @@
+{
+  "name": "NfsAcademy_front",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "^3.25.3",
+    "flowbite": "^1.6.6",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-burger-menu": "^2.0.5",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vue-toastification": "^1.7.14",
+    "vuestic-components": "^1.1.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.3.3",
+    "postcss": "^8.4.17"
+  }
+}
