@@ -1,9 +1,9 @@
 <template>
-  <nav class="bg-blue-700 shadow sticky">
+  <nav class="bg-blue-700 shadow sticky w-full">
     <div
       class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center"
     >
-      <div class="flex justify-between items-center w-screen">
+      <div class="flex justify-between items-center w-full">
         <div>
           <NuxtLink to="/" class="text-gray-800 text-xl font-bold md:text-2xl">
             <img src="../assets/images/logoWhite.png" alt="Logo" class="w-28" />
@@ -38,7 +38,7 @@
       </div> -->
 
         <div class="relative mx-auto text-gray-600 md:mx-0">
-          <input
+          <!-- <input
             class="border-2 border-gray-300 bg-white h-10 px-5 pr-10 rounded-lg text-sm focus:outline-none"
             type="search"
             name="search"
@@ -58,7 +58,7 @@
                   s-17-7.626-17-17S14.61,6,23.984,6z"
               />
             </svg>
-          </button>
+          </button> -->
         </div>
 
         <div class="md:ml-6">

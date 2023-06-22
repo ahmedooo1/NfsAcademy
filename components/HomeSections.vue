@@ -4,7 +4,7 @@
       class="w-full h-[614px] bg-blue-700 rounded-bl-[278.50px] rounded-br-[278.50px] flex flex-col justify-center items-center"
     >
       <!--ici-->
-
+      <div class="p-14"></div>
       <div class="flex flex-col justify-center items-center">
         <h1 class="text-4xl text-white text-center">
           Bienvenue sur votre site
@@ -15,14 +15,15 @@
           alt="Logo"
           class="w-full m-10 fill-white"
         />
+
         <button
-          class="bg-white hover:bg-gray-300 text-gray-900 font-bold py-4 px-8 rounded-full mb-30"
+          class="bg-white hover:bg-gray-300 text-gray-900 font-bold py-4 px-8 rounded-full"
         >
           Qui Somme nous ?
         </button>
       </div>
       <!-- Flèche animée -->
-      <div class="animate-bounce">
+      <div class="animate-bounce z-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -39,6 +40,16 @@
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </div>
+    </div>
+    <div class="w-3/4 text-center text-lg m-auto mt-20">
+      <h1 class="text-2xl text-center m-5 font-bold">
+        C’est quoi NFS Academy ?
+      </h1>
+      <p class="">
+        NFS Academy est un site web éducatif complet et utile pour les personnes
+        qui cherchent à apprendre des compétences informatiques dans une grande
+        variété de domaines.
+      </p>
     </div>
   </div>
 </template>
