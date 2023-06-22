@@ -89,7 +89,7 @@
             class="px-4 py-2 bg-red-500 text-white rounded flex flex-row justify-around items-center"
           >
             <svg
-              class="w-6 h-6 text-white dark:text-white ml-2"
+              class="w-6 h-6 text-white dark:text-white mr-2"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -107,11 +107,22 @@
           </button>
         </div>
         <div v-if="isLoggedIn">
-          <NuxtLink
-            to="/profil"
-            class="text-gray-800 text-l font-bold md:text-2xl"
-            >Profil</NuxtLink
-          >
+          <NuxtLink to="/profil" class="text-white text-l font-bold md:text-2xl"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 h-8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </NuxtLink>
         </div>
       </div>
     </div>
