@@ -1,7 +1,7 @@
 <template>
-  <nav class="bg-blue-700 shadow sticky w-full">
+  <nav class="bg-blue-700 sticky w-full">
     <div
-      class="container mx-auto px-6 py-3 md:flex md:justify-between md:items-center"
+      class="container mx-auto px-6 py-6 md:flex md:justify-between md:items-center"
     >
       <div class="flex justify-between items-center w-full">
         <div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="w-full h-[614px] bg-blue-700 rounded-bl-[278.50px] rounded-br-[278.50px] flex flex-col justify-center items-center"
+      class="w-full h-[514px] bg-blue-700 rounded-bl-[278.50px] rounded-br-[278.50px] flex flex-col justify-center items-center"
     >
       <!--ici-->
       <div class="p-14"></div>
@@ -17,7 +17,8 @@
         />
 
         <button
-          class="bg-white hover:bg-gray-300 text-gray-900 font-bold py-4 px-8 rounded-full"
+          @click="scrollToQuiSommesNous"
+          class="bg-white hover:bg-gray-300 text-gray-900 font-bold py-4 px-8 rounded-full mb-10"
         >
           Qui Somme nous ?
         </button>
@@ -35,14 +36,14 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           z-index="9"
-          class="text-white z-0 mt-40"
+          class="text-white z-0 mt-20"
         >
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </div>
     </div>
-    <div class="w-3/4 text-center text-lg m-auto mt-20">
-      <h1 class="text-2xl text-center m-5 font-bold">
+    <div class="w-3/4 text-center text-lg m-auto mt-20" id="qui-sommes-nous">
+      <h1 class="text-2xl text-center m-5 my-20 font-bold">
         C’est quoi NFS Academy ?
       </h1>
       <p class="">
@@ -53,3 +54,13 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    scrollToQuiSommesNous() {
+      const quiSommesNous = document.querySelector("#qui-sommes-nous");
+      quiSommesNous.scrollIntoView({ behavior: "smooth" });
+    },
+  },
+};
+</script>
