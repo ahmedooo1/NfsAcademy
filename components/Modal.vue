@@ -50,7 +50,7 @@
         </div>
         <div
           class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
-          v-if="!showRegisterForm"
+          v-if="showLoginForm"
         >
           <h3
             class="text-lg font-medium leading-6 text-center text-gray-900"
@@ -264,7 +264,7 @@
             <p class="mt-10 text-sm text-center text-gray-500">
               <a
                 href="#"
-                @click.prevent="showResetPasswordForm = false"
+                @click.prevent="backToLogin"
                 class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
                 >Retour à la connexion</a
               >
@@ -284,6 +284,7 @@ export default {
       email: "",
       password: "",
       showRegisterForm: false,
+      showLoginForm: true,
       showResetPasswordForm: false,
     };
   },
@@ -299,10 +300,19 @@ export default {
     },
     toggleRegisterForm() {
       this.showRegisterForm = !this.showRegisterForm;
+      this.showLoginForm = !this.showLoginForm;
       this.showResetPasswordForm = false;
     },
+    backToLogin() {
+     this.showRegisterForm = false;
+    this.showResetPasswordForm = false;
+     this.showLoginForm =true;
+
+    },
     toggleMotDePasse() {
-      this.showResetPasswordForm = !this.showResetPasswordForm;
+      this.showRegisterForm = false;
+      this.showResetPasswordForm = true;
+      this.showLoginForm = false
     },
 
     async login() {
