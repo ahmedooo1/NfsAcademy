@@ -1,16 +1,16 @@
 <template>
   <div
-    class="fixed z-50 inset-0 overflow-y-auto"
+    class="relative inset-0 z-50 overflow-y-auto "
     aria-labelledby="modal-title"
     role="dialog"
     aria-modal="true"
     v-if="isOpen"
   >
     <div
-      class="flex items-end justify-center min-h-screen pt-4 px-4 pb-80 text-center sm:block sm:p-0"
+      class="flex items-end justify-center min-h-screen px-4 pt-4 text-center pb-80 sm:block sm:p-0"
     >
       <div
-        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"
         aria-hidden="true"
         @click="closeModal"
       ></div>
@@ -22,17 +22,17 @@
       >
 
       <div
-        class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full z-50"
+        class="z-50 inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
       >
-        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
           <button
             type="button"
-            class="bg-white rounded-md shadow-sm -ml-4 -mr-2 px-4 py-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class="inline-flex items-center justify-center px-4 py-2 -ml-4 -mr-2 text-gray-400 bg-white rounded-md shadow-sm hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             @click="closeModal"
           >
             <span class="sr-only">Fermer</span>
             <svg
-              class="h-6 w-6"
+              class="w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -49,11 +49,11 @@
           </button>
         </div>
         <div
-          class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4"
+          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
           v-if="!showRegisterForm"
         >
           <h3
-            class="text-lg leading-6 font-medium text-gray-900 text-center"
+            class="text-lg font-medium leading-6 text-center text-gray-900"
             id="modal-title"
           >
             Connexion
@@ -117,7 +117,7 @@
                 </button>
               </div>
             </form>
-            <p class="mt-10 text-center text-sm text-gray-500">
+            <p class="mt-10 text-sm text-center text-gray-500">
               Vous n'avez un compte?
               <a
                 href="#"
@@ -130,12 +130,12 @@
         </div>
         <!-- Formulaire d'inscription -->
         <div
-          class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4"
+          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
           v-if="showRegisterForm"
         >
           <!-- Contenu du formulaire d'inscription -->
           <h3
-            class="text-lg leading-6 font-medium text-gray-900 text-center"
+            class="text-lg font-medium leading-6 text-center text-gray-900"
             id="modal-title"
           >
             Inscription
@@ -210,7 +210,7 @@
             </div>
           </form>
 
-          <p class="mt-10 text-center text-sm text-gray-500">
+          <p class="mt-10 text-sm text-center text-gray-500">
             Vous avez déja un compte?
             <a
               href="#"
@@ -223,11 +223,11 @@
 
         <!-- Formulaire de réinitialisation du mot de passe -->
         <div
-          class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4"
+          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
           v-if="showResetPasswordForm"
         >
           <h3
-            class="text-lg leading-6 font-medium text-gray-900 text-center"
+            class="text-lg font-medium leading-6 text-center text-gray-900"
             id="modal-title"
           >
             Réinitialisation du mot de passe
@@ -261,7 +261,7 @@
                 </button>
               </div>
             </form>
-            <p class="mt-10 text-center text-sm text-gray-500">
+            <p class="mt-10 text-sm text-center text-gray-500">
               <a
                 href="#"
                 @click.prevent="showResetPasswordForm = false"

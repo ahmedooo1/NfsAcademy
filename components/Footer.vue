@@ -1,10 +1,10 @@
 <template>
-  <footer class="bg-blue-600 mt-10">
-    <div class="container mx-auto px-6 py-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <footer class="mt-10 bg-blue-700">
+    <div class="container px-6 py-10 mx-auto">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <h3 class="text-lg font-semibold text-white">Menu</h3>
-          <div class="mt-6 flex flex-col">
+          <div class="flex flex-col mt-6">
             <NuxtLink to="/contact" class="text-white hover:underline">
               Contactez nous !
             </NuxtLink>
@@ -16,7 +16,7 @@
         </div>
         <div>
           <h3 class="text-lg font-semibold text-white">Nous contacter</h3>
-          <address class="not-italic mt-6 text-white">
+          <address class="mt-6 not-italic text-white">
             <p>
               <span class="font-semibold">Adresse:</span>
               10, rue sarl Rouen 76000
