@@ -284,7 +284,6 @@ export default {
       email: "",
       password: "",
       showRegisterForm: false,
-      showLoginForm: true,
       showResetPasswordForm: false,
     };
   },
