@@ -10,7 +10,7 @@
 
 
         <div class="flex items-center justify-between md:ml-6">
-          <NuxtLink to="/guidesList" class="px-4 py-2 mx-8 text-white rounded hover:bg-white hover:text-gray-800 ">
+          <NuxtLink to="/guidesList" class="px-4 py-2 mx-8 text-white rounded-full hover:bg-white hover:text-gray-800 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -29,7 +29,7 @@
           <button
             v-if="!isLoggedIn"
             @click="openModal"
-            class="px-4 py-2 text-white rounded hover:bg-white hover:text-gray-800"
+            class="px-4 py-2 text-white rounded-full hover:bg-white hover:text-gray-800"
           >
             <svg
               class="w-6 h-6 dark:text-white"
@@ -48,8 +48,8 @@
             </svg>
           </button>
 
-          <div v-if="isLoggedIn">
-            <NuxtLink to="/profil" class="font-bold text-white text-l md:text-2xl"
+        
+            <NuxtLink to="/profil" v-if="isLoggedIn" class="px-4 py-2 mx-8 text-white rounded-full hover:bg-white hover:text-gray-800 "
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -65,15 +65,15 @@
                 />
               </svg>
             </NuxtLink>
-          </div>
+        
 
           <button
             v-if="isLoggedIn"
             @click="logout"
-            class="flex flex-row items-center justify-around px-8 py-2 text-white rounded-full"
+            class="flex flex-row items-center justify-around px-4 py-2 mx-8 text-white rounded-full hover:bg-red-700 hover:text-white"
           >
             <svg
-              class="w-6 h-6 mr-2 text-white dark:text-white"
+              class="w-6 h-6 text-white dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

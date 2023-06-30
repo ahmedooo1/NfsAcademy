@@ -1,8 +1,8 @@
 <template>
   <div class="p-4">  
-    <h1 class="text-2xl font-bold mb-4 text-center"> Profil</h1>
+    <h1 class="mb-4 text-2xl font-bold text-center"> Profil</h1>
      <!-- Profil de l'utilisateur actuel -->
-    <h1 v-if="user" class="text-3xl font-medium text-center mt-4">
+    <h1 v-if="user" class="mt-4 text-3xl font-medium text-center">
       Bonjour, {{ user.name }}!
     </h1>
 
@@ -14,7 +14,7 @@
       type="text"
       id="name"
       v-model="updatedUser.name"
-      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-base"
+      class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
     />
   </div>
   <div class="mt-4">
@@ -23,25 +23,25 @@
       type="email"
       id="email"
       v-model="updatedUser.email"
-      class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-base"
+      class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
     />
   </div>
   <button
     type="submit"
-    class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-md"
+    class="px-4 py-2 mt-4 text-white bg-indigo-600 rounded-md"
   >
     Mettre à jour le profil
   </button>
 </form>
-<div v-if="$store.getters.isAdminOrRedacteur" class="flex flex-col justify-center items-center">
-  <NuxtLink to="/create" class="text-white text-l font-bold md:text-2xl bg-blue-800 rounded-full p-3 ">Ajouter un guide +</NuxtLink>
+<div v-if="$store.getters.isAdminOrRedacteur" class="flex flex-col items-center justify-center">
+  <NuxtLink to="/create" class="p-3 font-bold text-white bg-blue-800 rounded-full text-l md:text-2xl ">Ajouter un guide +</NuxtLink>
 </div>
 <!-- Bloc réservé aux administrateurs -->
-<div v-if="user && isAdmin"  class="text-2xl mb-4 text-center" >
+<div v-if="user && isAdmin"  class="mb-4 text-2xl text-center" >
   <h1 
-    class="text-2xl font-bold mb-4 text-center"
+    class="mb-4 text-2xl font-bold text-center"
   >
-    Barre de recherche resrvée aux administrateurs
+    Recherchez un utilisateur :
 
   </h1>
  <!-- Barre de recherche -->
@@ -50,7 +50,7 @@
           v-model="searchQuery"
           @input="searchUsers"
           placeholder="Rechercher par nom ou e-mail"
-          class="w-full px-3 py-2 rounded-md shadow-sm border border-gray-300 bg-white"
+          class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm"
     /></div>
   <!-- Le reste de la liste des utilisateurs et des boutons de gestion des rôles -->
 
@@ -64,25 +64,25 @@
         <button
           v-if="user.role !== 'admin'"
           @click="updateRole(user, 'admin')"
-          class="bg-blue-500 text-white px-2 py-1 rounded"
+          class="px-2 py-1 text-white bg-blue-500 rounded"
         >
           Set as Admin
         </button>
         <button
           v-if="user.role !== 'redacteur'"
           @click="updateRole(user, 'redacteur')"
-          class="bg-green-500 text-white px-2 py-1 rounded"
+          class="px-2 py-1 text-white bg-green-500 rounded"
         >
           Set as Redacteur
         </button>
          <button
         v-if="user.role !== 'user'"
         @click="updateRole(user, 'user')"
-        class="bg-gray-500 text-white px-2 py-1 rounded"
+        class="px-2 py-1 text-white bg-gray-500 rounded"
       >
         Set as User
       </button>
-        <button @click="deleteUser(user)" class="bg-red-500 text-white px-2 py-1 rounded">
+        <button @click="deleteUser(user)" class="px-2 py-1 text-white bg-red-500 rounded">
           Delete
         </button>
       </div>

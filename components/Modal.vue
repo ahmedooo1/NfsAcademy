@@ -7,7 +7,7 @@
     v-if="isOpen"
   >
     <div
-      class="flex items-end justify-center min-h-screen px-4 pt-4 text-center pb-80 sm:block sm:p-0"
+      class="flex items-end justify-center min-h-screen px-4 pt-4 text-center pb-96 sm:block sm:p-0"
     >
       <div
         class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"
