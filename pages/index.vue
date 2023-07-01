@@ -7,6 +7,8 @@
 </template>
 
 <script>
+
+
 import Navbar from '@/components/Navbar.vue';
 import HomeSections from '@/components/HomeSections.vue';
 import Footer from '@/components/Footer.vue';

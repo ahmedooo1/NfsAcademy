@@ -2,16 +2,17 @@
   <div>   
     <Navbar/>
     <Profil />
+    <Footer/>
   </div>
  
   </template>
   
   <script>
-  import Profil from '@/components/Profil'
-  
+  import Profil from '@/components/Profil'  
   export default {
     components: {
-      Profil
+      Profil,
+      
     },
     name: 'IndexPage',
     meta: {

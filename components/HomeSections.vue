@@ -21,7 +21,7 @@
           class="mb-10 font-bold text-gray-900 bg-white rounded-full hover:bg-gray-300"
         >
           <div
-  class="relative flex items-center px-8 py-3 overflow-hidden text-gray-900 rounded group focus:outline-none active:text-gray-900"
+  class="relative inline-flex items-center px-8 py-3 overflow-hidden text-gray-900 rounded group focus:outline-none focus:ring active:text-gray-900"
  
 >
   <span class="absolute transition-all -end-full group-hover:end-4">
@@ -108,7 +108,7 @@
         <p class="leading-relaxed">Products</p>
       </div>
     </div>
-    <div class="w-full mt-6 overflow-hidden rounded-lg lg:w-1/2 sm:w-1/3 sm:mt-0">
+    <div class="mt-6 overflow-hidden rounded-lg  lg:w-1/2 sm:w-1/3 sm:mt-0">
       <img class="object-cover object-center w-full h-full" src="../assets/images/studentGirl.jpeg" alt="stats">
     </div>
   </div>

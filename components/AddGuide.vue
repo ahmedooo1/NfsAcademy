@@ -1,20 +1,20 @@
 <template>
     <div>
         <Navbar/>
-        <div class="container mx-auto w-3/4">
+        <div class="container w-3/4 mx-auto">
             <h1>Créer un nouveau guide</h1>
-          <h1 class="text-2xl font-semibold mb-6">Ajouter un guide</h1>
+          <h1 class="mb-6 text-2xl font-semibold">Ajouter un guide</h1>
           <form @submit.prevent="addGuide" class="space-y-4">
                 <div>
                     <div>
                         <label for="parentCategory" class="block text-sm font-medium text-gray-700">Catégorie parente :</label>
-                        <select id="parentCategory" v-model="selectedParentCategory"  class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm">
+                        <select id="parentCategory" v-model="selectedParentCategory"  class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md">
                           <option v-for="parentCategory in parentCategories" :key="parentCategory._id" :value="parentCategory._id">{{ parentCategory.name }}</option>
                         </select>
                     </div>
                     <div>
                         <label for="category" class="block text-sm font-medium text-gray-700">Catégorie :</label>
-                        <select id="category" v-model="selectedCategory"  class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm">
+                        <select id="category" v-model="selectedCategory"  class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md">
                           <option v-for="category in categories" :key="category._id" :value="category._id">{{ category.name }}</option>
                         </select>
                       </div>
@@ -23,7 +23,7 @@
                   type="file"
                   id="image"
                   @change="onFileSelected"
-                  class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                  class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
                 />
               </div>
             <div>
@@ -33,31 +33,22 @@
                 id="title"
                 v-model="guide.title"
                 required
-                class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
               />
             </div>
-            <div>
-                <label for="price" class="block text-sm font-medium text-gray-700">Prix :</label>
-                <input
-                  type="number"
-                  id="price"
-                  v-model="guide.price"
-                  required
-                  class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                />
-              </div>
+        
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description :</label>
                 <textarea
                   id="description"
                   v-model="guide.description"
                   required
-                  class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                  class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
                 ></textarea>
               </div>
             <button
               type="submit"
-              class="py-2 px-4 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-600"
+              class="px-4 py-2 font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
             >
               Ajouter le guide
             </button>
@@ -78,7 +69,6 @@
           guide: {
             title: '',
             description: '',
-            price: null,
           },
           imageFile: null,
           parentCategories: [],
@@ -114,7 +104,6 @@
             const formData = new FormData()
             formData.append('title', this.guide.title)
             formData.append('description', this.guide.description)
-            formData.append('price', this.guide.price)
             formData.append('parentCategory', this.selectedParentCategory)
             formData.append('category', this.selectedCategory)
             if (this.imageFile) {
@@ -127,7 +116,7 @@
               },
             })
             console.log('Guide ajouté avec succès:', data)
-            this.$router.push('/')
+            this.$router.push('/guidesList')
           } catch (err) {
             console.error(err)
           }

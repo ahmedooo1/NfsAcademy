@@ -18,6 +18,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/flowbite.css'
   ],
   plugins:[
   { src: '~/plugins/toast.js', mode: 'client' },
