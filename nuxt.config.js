@@ -5,6 +5,7 @@ export default {
     htmlAttrs: {
       lang: 'fr'
     },
+    
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,6 +22,8 @@ export default {
     '~/assets/css/flowbite.css'
   ],
   plugins:[
+    { src: '~/plugins/tiptap.js' },
+
   { src: '~/plugins/toast.js', mode: 'client' },
   '~/plugins/axios.js',
   ],

@@ -1,113 +1,112 @@
 <template>
   <div>
     <Navbar />
-    <div class="container w-3/4 mx-auto">
-      <h1>Créer un nouveau guide</h1>
-      <h1 class="mb-6 text-2xl font-semibold">Ajouter un guide</h1>
-      <form @submit.prevent="addGuide" class="space-y-4">
-        <div>
+    <div class="container py-6 mx-auto">
+      <h1 class="mb-6 text-3xl font-extrabold text-gray-800 ">Ajouter un guide</h1>
+      <form @submit.prevent="addGuide" class="p-4 bg-white rounded-lg shadow-2xl">
+        <div class="px-6 mb-6 md:flex md:justify-between md:items-center">
           <div>
-            <label for="parentCategory" class="block text-sm font-medium text-gray-700"
-              >Catégorie parente :</label
-            >
-            <select
-              id="parentCategory"
-              v-model="selectedParentCategory"
-              class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
-            >
-              <option
-                v-for="parentCategory in parentCategories"
-                :key="parentCategory._id"
-                :value="parentCategory._id"
-              >
-                {{ parentCategory.name }}
-              </option>
-            </select>
-          </div>
-          <div>
-            <label for="category" class="block text-sm font-medium text-gray-700"
-              >Catégorie :</label
-            >
-            <select
-              id="category"
-              v-model="selectedCategory"
-              class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
-            >
-              <option
-                v-for="category in categories"
-                :key="category._id"
-                :value="category._id"
-              >
-                {{ category.name }}
-              </option>
-            </select>
-          </div>
-          <div class="flex items-center justify-center w-full">
-            <label
-              for="dropzone-file"
-              class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-            >
-              <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg
-                  aria-hidden="true"
-                  class="w-10 h-10 mb-3 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                  ></path>
-                </svg>
-                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span class="font-semibold">Click to upload</span>
-                </p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, JPEG</p>
-              </div>
-              <input
-                id="dropzone-file"
-                type="file"
-                @change="onFileSelected"
-                class="border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50"
-              />
+            <label class="block pr-4 mb-1 font-bold text-gray-500 md:text-right md:mb-0" for="parentCategory">
+              Catégorie parente :
             </label>
           </div>
+          <div class="w-full md:w-3/4">
+            <div class="relative">
+              <select id="parentCategory" v-model="selectedParentCategory" class="block w-full px-4 py-3 pr-8 text-gray-700 bg-gray-100 border border-gray-300 rounded-md appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                <option disabled value="">Choisissez une catégorie parente</option>
+                <option v-for="parentCategory in parentCategories" :key="parentCategory._id" :value="parentCategory._id">
+                  {{ parentCategory.name }}
+                </option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 8l4 4 4-4"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div>
-          <label for="title" class="block text-sm font-medium text-gray-700"
-            >Titre :</label
-          >
+        <div class="px-6 mb-6 md:flex md:justify-between md:items-center">
+          <div >
+            <label class="block pr-4 mb-1 font-bold text-gray-500 md:text-right md:mb-0" for="category">
+              Catégorie :
+            </label>
+          </div>
+          <div class="w-full md:w-3/4">
+            <div class="relative">
+              <select id="category" v-model="selectedCategory" class="block w-full px-4 py-3 pr-8 text-gray-700 bg-gray-100 border border-gray-300 rounded-md appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                <option disabled value="">Choisissez une catégorie</option>
+                <option v-for="category in categories" :key="category._id" :value="category._id">
+                  {{ category.name }}
+                </option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 8l4 4 4-4"></path>                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 mb-6">
+          <label class="block mb-2 font-bold text-gray-500" for="image">
+            Image :
+          </label>
+          <div class="flex flex-col items-center space-y-4">
+            <label
+              for="dropzone-file"
+              class="relative flex flex-col items-center justify-center w-full bg-gray-100 border-2 border-gray-300 border-dashed rounded-md cursor-pointer h-80 md:h-56 hover:bg-gray-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+            >
+              <div class="text-center">
+                <svg class="w-12 h-12 mx-auto text-gray-400 transition-colors duration-300 ease-in-out group-hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                <p class="text-sm text-gray-500 transition-colors duration-300 ease-in-out group-hover:text-gray-600">
+                  <span>Ajouter une image</span>
+                </p>
+                <p class="text-xs text-gray-500 transition-colors duration-300 ease-in-out group-hover:text-gray-600">
+                  PNG, JPG, JPEG
+                </p>
+              </div>
+              <input id="dropzone-file" type="file" @change="onFileSelected" class="sr-only" />
+              <div x-show="imagePreview" class="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-contain" :style="{ backgroundImage: `url(${imagePreview})` }"></div>
+            </label>
+            <button x-show="imagePreview" type="button" @click="removeImage" class="inline-block px-2 py-1 font-bold text-gray-500 transition duration-150 ease-in-out border border-transparent rounded-md hover:text-white hover:bg-red-500 hover:border-gray-300 focus:outline-none focus:border-gray-300 focus:shadow-outline-gray active:bg-gray-100">
+              Supprimer l'image
+            </button>
+          </div>
+        </div>
+        <div class="px-6 mb-6">
+          <label class="block mb-2 font-bold text-gray-500" for="title">
+            Titre :
+          </label>
           <input
-            type="text"
             id="title"
+            type="text"
             v-model="guide.title"
             required
-            class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
+            class="block w-full px-4 py-3 leading-tight bg-gray-100 border border-gray-300 rounded-md appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
           />
         </div>
-
-        <div>
-          <label for="description" class="block text-sm font-medium text-gray-700"
-            >Description :</label
-          >
+        <div class="px-6 mb-6">
+          <label class="block mb-2 font-bold text-gray-500" for="description">
+            Description :
+          </label>
           <textarea
             id="description"
             v-model="guide.description"
             required
-            class="w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md"
+            rows="6"
+            class="block w-full px-4 py-3 leading-tight bg-gray-100 border border-gray-300 rounded-md appearance-none resize-none focus:outline-none focus:bg-white focus:border-gray-500"
           ></textarea>
         </div>
-        <button
-          type="submit"
-          class="px-4 py-2 font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
-        >
-          Ajouter le guide
-        </button>
+        <div class="flex items-center justify-center px-6 py-4 bg-gray-100 rounded-b-lg">
+          <button
+            type="submit"
+            class="inline-block w-full px-6 py-2 text-base font-medium text-white transition duration-150 ease-in-out bg-blue-500 border border-transparent rounded-full md:w-auto hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue focus:border-blue-700 "
+          >
+            Ajouter le guide
+          </button>
+        </div>
       </form>
     </div>
   </div>
@@ -127,6 +126,7 @@ export default {
         description: "",
       },
       imageFile: null,
+      imagePreview: null,
       parentCategories: [],
       categories: [],
       selectedParentCategory: null,
@@ -159,6 +159,12 @@ export default {
   methods: {
     onFileSelected(event) {
       this.imageFile = event.target.files[0];
+      this.imagePreview = URL.createObjectURL(this.imageFile);
+    },
+    removeImage() {
+      this.imageFile = null;
+      this.imagePreview = null;
+      document.getElementById("dropzone-file").value = "";
     },
     async addGuide() {
       try {
@@ -190,5 +196,20 @@ export default {
 <style scoped>
 .container {
   margin-top: 2rem;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
 }
 </style>
