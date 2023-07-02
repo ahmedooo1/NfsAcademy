@@ -108,7 +108,7 @@
         <p class="leading-relaxed">Products</p>
       </div>
     </div>
-    <div class="mt-6 overflow-hidden rounded-lg  lg:w-1/2 sm:w-1/3 sm:mt-0">
+    <div class="mt-6 overflow-hidden rounded-lg lg:w-1/2 sm:w-1/3 sm:mt-0">
       <img class="object-cover object-center w-full h-full" src="../assets/images/studentGirl.jpeg" alt="stats">
     </div>
   </div>
@@ -133,7 +133,7 @@
           </svg>
         </div>
         <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-          <h2 class="mb-1 text-xl font-medium text-gray-900 title-font">Shooting Stars</h2>
+          <h2 class="mb-1 text-xl font-medium title-font">Shooting Stars</h2>
           <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
         </div>
       </div>

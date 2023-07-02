@@ -5,7 +5,12 @@ export default {
     htmlAttrs: {
       lang: 'fr'
     },
-    
+    script: [
+      {
+          src: 'https://cdn.tiny.cloud/1/qy48pjg71k9urdmpfkn5nqx4v6jbwwt8ieju0y8vvlpvo3pz/tinymce/5/tinymce.min.js',
+          defer: true
+      }
+  ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -13,7 +18,11 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.tiny.cloud/1/qy48pjg71k9urdmpfkn5nqx4v6jbwwt8ieju0y8vvlpvo3pz/tinymce/5/skins/ui/oxide/skin.min.css'
+    }
     ]
   },
 
@@ -22,8 +31,6 @@ export default {
     '~/assets/css/flowbite.css'
   ],
   plugins:[
-    { src: '~/plugins/tiptap.js' },
-
   { src: '~/plugins/toast.js', mode: 'client' },
   '~/plugins/axios.js',
   ],
@@ -49,6 +56,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
   },
   router: {
     middleware: ['auth']

@@ -12,7 +12,24 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        light: {
+          primary: '#1a202c',
+          secondary: '#a0aec0',
+          accent: '#e2e8f0',
+          background: '#ffffff',
+          text: '#1a202c'
+        },
+        dark: {
+          primary: '#ffffff',
+          secondary: '#a0aec0',
+          accent: '#2d3748',
+          background: '#1a202c',
+          text: '#e2e8f0'
+        },
+      },
+    },
   },
   plugins: [
     require('flowbite/plugin')
