@@ -26,6 +26,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.3.3",
     "postcss": "^8.4.17",
-    "tailwindcss-animated": "^1.0.1"
+    "tailwindcss-animated": "^1.0.1",
+    "webpack": "^4.46.0"
   }
 }

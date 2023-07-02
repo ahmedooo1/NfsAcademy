@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="w-full py-2 mx-auto bg-blue-700 lg:px-6 md:flex md:justify-between md:items-center">
+    <nav class="relative w-full py-2 mx-auto bg-blue-700 lg:px-6 md:flex md:justify-between md:items-center">
       <div class="container px-6 py-6 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex flex-wrap items-center justify-between w-full ">
           <div>
@@ -82,7 +82,7 @@
 
           <div
             v-show="isOpen"
-            class="absolute left-0 flex flex-col items-center justify-center w-full duration-75 bg-blue-700 rounded-lg top-20"
+            class="absolute left-0 z-50 flex flex-col items-center justify-center w-full duration-75 bg-blue-700 rounded-lg top-20"
           >
             <!-- <button
               @click="toggleDropdown"
