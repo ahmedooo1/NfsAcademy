@@ -9,7 +9,7 @@
               class="flex text-white lg:hidden focus:outline-none"
             >
               <svg
-                class="w-6 h-6 fill-current hover:text-gray-800"
+                class="w-6 h-6 fill-current hover:text-gray-300"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
