@@ -29,6 +29,9 @@ module.exports = {
           text: '#e2e8f0'
         },
       },
+      fontFamily: {
+        'material-icons': ['Material Icons'], // Ajoutez la police des icônes de Material icons ici
+      },
     },
   },
   plugins: [

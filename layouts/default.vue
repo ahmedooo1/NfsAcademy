@@ -1,7 +1,13 @@
 <template>
-  <div
-    
-  >
+<div>
+  <!-- <div
+    :class="{
+      'bg-': !darkMode,
+      'bg-black': darkMode,
+      'text-black': !darkMode,
+      'text-white': darkMode
+    }"
+  ></div> -->
     <!-- <dark-mode-toggle :darkMode="darkMode" @toggle="toggleDarkMode" /> -->
     <dark-mode-btn :darkMode="darkMode" @toggle="toggleDarkMode" />
     <nuxt />

@@ -1,20 +1,20 @@
 <template>
-  <div class="comments-section mt-8">
-    <h2 class="text-2xl font-semibold mb-4 relative">Commentaires</h2>
+  <div class="mt-8 comments-section">
+    <h2 class="relative mb-4 text-2xl font-semibold">Commentaires</h2>
     <form
       @submit.prevent="submitComment"
       class="m-4"
       v-if="$store.getters.isLoggedIn"
     >
-      <label for="comment-text" class="block mb-2 mt-4">Commentaire :</label>
+      <label for="comment-text" class="block mt-4 mb-2">Commentaire :</label>
       <textarea
         id="comment-text"
         v-model="text"
-        class="border border-gray-300 p-2 w-full h-24"
+        class="w-full h-24 p-2 border border-gray-300"
       ></textarea>
       <button
         type="submit"
-        class="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+        class="px-4 py-2 mt-4 text-white bg-blue-500 rounded"
       >
         Envoyer
       </button>
@@ -23,27 +23,27 @@
       <div
         v-for="comment in comments"
         :key="comment._id"
-        class="mb-2 bg-slate-200 p-2 w-96 h-auto flex flex-col flex-wrap"
+        class="flex flex-col flex-wrap h-auto p-2 mb-2 bg-slate-200 w-96"
       >
         <p class="font-semibold" v-if="comment.userId">
           {{ comment.userId.name }}
         </p>
         <p
           v-if="comment.content"
-          class="w-full md:w-3/4 break-words overflow-auto"
+          class="w-full overflow-auto break-words md:w-3/4"
         >
           {{ comment.content }}
         </p>
         <div v-if="canEditOrDeleteComment(comment.userId._id)" class="flex">
           <button
             @click="editComment(comment)"
-            class="bg-yellow-500 text-white px-2 py-1 mr-2 rounded"
+            class="px-2 py-1 mr-2 text-white bg-yellow-500 rounded"
           >
             Modifier
           </button>
           <button
             @click="deleteComment(comment)"
-            class="bg-red-500 text-white px-2 py-1 rounded"
+            class="px-2 py-1 text-white bg-red-500 rounded"
           >
             Supprimer
           </button>

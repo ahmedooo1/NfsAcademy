@@ -1,13 +1,13 @@
 <template>
     <div class="container mx-auto my-10">
-      <h1 class="text-4xl font-bold mb-5">Modifier l'article</h1>
+      <h1 class="mb-5 text-4xl font-bold">Modifier l'article</h1>
       <form @submit.prevent="updateGuide" class="w-full max-w-lg">
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+          <label class="block mb-2 text-sm font-bold text-gray-700" for="title">
             Titre
           </label>
           <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             id="title"
             type="text"
             placeholder="Titre de l'article"
@@ -15,20 +15,15 @@
           />
         </div>
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+          <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
             Description
           </label>
-          <textarea
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="description"
-            placeholder="Description de l'article"
-            v-model="guide.description"
-            rows="4"
-          ></textarea>
+        <IDEText id="description"  :guide="guide"  v-model="guide.description" class="" />
+
         </div>
         <div class="flex items-center justify-between">
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Mettre à jour
@@ -52,7 +47,8 @@
             title: this.guide.title,
             description: this.guide.description,
           });
-  
+          this.$toast.success("Mise à jour avec succès !");
+
           this.$router.push(`/guides/${this.guide._id}`);
         } catch (error) {
           console.error('Error updating guide:', error);

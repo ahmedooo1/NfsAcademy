@@ -6,10 +6,7 @@ export default {
       lang: 'fr'
     },
     script: [
-      {
-          src: 'https://cdn.tiny.cloud/1/qy48pjg71k9urdmpfkn5nqx4v6jbwwt8ieju0y8vvlpvo3pz/tinymce/5/tinymce.min.js',
-          defer: true
-      }
+   
   ],
     meta: [
       { charset: 'utf-8' },
@@ -21,8 +18,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://cdn.tiny.cloud/1/qy48pjg71k9urdmpfkn5nqx4v6jbwwt8ieju0y8vvlpvo3pz/tinymce/5/skins/ui/oxide/skin.min.css'
-    }
+        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+      },
+     
     ]
   },
 
@@ -31,6 +29,7 @@ export default {
     '~/assets/css/flowbite.css'
   ],
   plugins:[
+    '~/plugins/client-only-placeholder.js',
   { src: '~/plugins/toast.js', mode: 'client' },
   '~/plugins/axios.js',
   ],

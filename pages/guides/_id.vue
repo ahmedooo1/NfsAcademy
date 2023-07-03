@@ -3,26 +3,26 @@
     <Navbar />
     <div
       v-if="guide"
-      class="md:w-1/2 sm:w-11/12 w-5/6 bg-white shadow rounded-lg p-6 flex flex-col justify-center items-center m-auto mt-10"
+      class="flex flex-col items-center justify-center w-5/6 p-6 m-auto mt-10 bg-white rounded-lg shadow md:w-3/4 sm:w-11/12"
     >
-      <h1 class="text-3xl font-semibold mb-4">{{ guide.title }}</h1>
+      <h1 class="mb-4 text-3xl font-semibold">{{ guide.title }}</h1>
       <img
         :src="guide.imageUrl"
         alt="Guide image"
-        class="w-full h-64 object-cover mb-4 rounded md:h-full md:w-full"
+        class="object-cover w-full h-64 mb-4 rounded md:h-full md:w-full"
       />
-      <p class="text-gray-700">{{ guide.description }}</p>
+<p class="w-full text-gray-700" v-html="guide.description"></p>
       <!--  les boutons pour modifier et supprimer des articles ici -->
       <div v-if="$store.getters.isAdminOrRedacteur" class="mt-4">
         <button
           @click="editGuide"
-          class="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+          class="px-4 py-2 mr-2 text-white bg-blue-500 rounded"
         >
           Modifier
         </button>
         <button
           @click="deleteGuide"
-          class="bg-red-500 text-white px-4 py-2 rounded"
+          class="px-4 py-2 text-white bg-red-500 rounded"
         >
           Supprimer
         </button>
@@ -73,8 +73,8 @@ export default {
           headers,
         });
         // Redirigez l'utilisateur vers la page d'accueil après la suppression
-        this.$toast.success("Guide deleted successfully");
-        this.$router.push("/");
+        this.$toast.success("supprimé avec succès !");
+        this.$router.push("/guidesList");
       } catch (error) {
         // Gérez les erreurs ici, par exemple, affichez un message d'erreur à l'utilisateur
         console.error(error);

@@ -91,13 +91,15 @@
           <label class="block mb-2 font-bold text-gray-500" for="description">
             Description :
           </label>
-          <textarea
+          <!-- <textarea
             id="description"
             v-model="guide.description"
             required
             rows="6"
             class="block w-full px-4 py-3 leading-tight bg-gray-100 border border-gray-300 rounded-md appearance-none resize-none focus:outline-none focus:bg-white focus:border-gray-500"
-          ></textarea>
+          ></textarea> -->
+
+<IDEText id="description"  :guide="guide"  v-model="guide.description" class="border-b-2 border-blue-500" />
         </div>
         <div class="flex items-center justify-center px-6 py-4 bg-gray-100 rounded-b-lg">
           <button
@@ -114,10 +116,11 @@
 
 <script>
 import Navbar from "~/components/Navbar.vue";
-
+import IDEText from '~/components/IDEText.vue'
 export default {
   components: {
     Navbar,
+    IDEText,
   },
   data() {
     return {
