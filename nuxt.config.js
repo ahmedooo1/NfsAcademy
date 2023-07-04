@@ -29,6 +29,7 @@ export default {
     '~/assets/css/flowbite.css'
   ],
   plugins:[
+    '~/plugins/vue-scrollto',
     '~/plugins/client-only-placeholder.js',
   { src: '~/plugins/toast.js', mode: 'client' },
   '~/plugins/axios.js',
