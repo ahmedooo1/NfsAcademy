@@ -1,48 +1,48 @@
 <template>
   <div class="p-4">
     <h1 class="flex justify-center w-full m-auto mb-4 text-2xl font-bold text-center">
-          <svg
-          height="32"
-          id="svg5"
-          version="1.1"
-          viewBox="0 0 32 32"
-          width="32"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:svg="http://www.w3.org/2000/svg"
-           class="w-24 h-24 text-white fill-current"
-        >
-          <defs id="defs2" />
-          <g id="layer1" transform="translate(-12,-484)">
-            <path
-              d="m 28,486 c -3.854145,0 -7,3.14585 -7,7 0,3.85415 3.145855,7 7,7 3.854145,0 7,-3.14585 7,-7 0,-3.85415 -3.145855,-7 -7,-7 z m 0,2 c 2.773266,0 5,2.22673 5,5 0,2.77327 -2.226734,5 -5,5 -2.773266,0 -5,-2.22673 -5,-5 0,-2.77327 2.226734,-5 5,-5 z"
-              id="circle27474"
-              style="
-                color: #000000;
-                fill: #00c89f;
-                fill-opacity: 1;
-                fill-rule: evenodd;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 4.1;
-                -inkscape-stroke: none;
-              "
-            />
-            <path
-              d="m 20.5,501 c -3.583699,0 -6.5,2.9163 -6.5,6.5 0,3.5837 2.916301,6.5 6.5,6.5 h 15 c 3.583699,0 6.5,-2.9163 6.5,-6.5 0,-3.5837 -2.916301,-6.5 -6.5,-6.5 z m 0,2 h 15 c 2.510295,0 4.5,1.98971 4.5,4.5 0,2.51029 -1.989705,4.5 -4.5,4.5 h -15 c -2.510295,0 -4.5,-1.98971 -4.5,-4.5 0,-2.51029 1.989705,-4.5 4.5,-4.5 z"
-              id="rect27480"
-              style="
-                color: #000000;
-                fill: #002cba;
-                fill-opacity: 1;
-                fill-rule: evenodd;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 4.1;
-                -inkscape-stroke: none;
-              "
-            />
-          </g>
-        </svg>
+      <svg
+        height="32"
+        id="svg5"
+        version="1.1"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        class="w-24 h-24 text-white fill-current"
+      >
+        <defs id="defs2" />
+        <g id="layer1" transform="translate(-12,-484)">
+          <path
+            d="m 28,486 c -3.854145,0 -7,3.14585 -7,7 0,3.85415 3.145855,7 7,7 3.854145,0 7,-3.14585 7,-7 0,-3.85415 -3.145855,-7 -7,-7 z m 0,2 c 2.773266,0 5,2.22673 5,5 0,2.77327 -2.226734,5 -5,5 -2.773266,0 -5,-2.22673 -5,-5 0,-2.77327 2.226734,-5 5,-5 z"
+            id="circle27474"
+            style="
+              color: #000000;
+              fill: #00c89f;
+              fill-opacity: 1;
+              fill-rule: evenodd;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-miterlimit: 4.1;
+              -inkscape-stroke: none;
+            "
+          />
+          <path
+            d="m 20.5,501 c -3.583699,0 -6.5,2.9163 -6.5,6.5 0,3.5837 2.916301,6.5 6.5,6.5 h 15 c 3.583699,0 6.5,-2.9163 6.5,-6.5 0,-3.5837 -2.916301,-6.5 -6.5,-6.5 z m 0,2 h 15 c 2.510295,0 4.5,1.98971 4.5,4.5 0,2.51029 -1.989705,4.5 -4.5,4.5 h -15 c -2.510295,0 -4.5,-1.98971 -4.5,-4.5 0,-2.51029 1.989705,-4.5 4.5,-4.5 z"
+            id="rect27480"
+            style="
+              color: #000000;
+              fill: #002cba;
+              fill-opacity: 1;
+              fill-rule: evenodd;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-miterlimit: 4.1;
+              -inkscape-stroke: none;
+            "
+          />
+        </g>
+      </svg>
     </h1>
     <!-- Profil de l'utilisateur actuel -->
     <h1 v-if="user" class="my-4 text-3xl font-medium text-center">
@@ -56,8 +56,11 @@
         to="/create"
         class="flex flex-col items-center justify-center p-3 font-bold rounded-md shadow-lg bg-slate-100 text-l md:text-2xl md:w-3/4 md:m-auto"
       >
-        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"           class="w-24 h-24 text-white fill-current"
->
+        <svg
+          viewBox="0 0 64 64"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-24 h-24 text-white fill-current"
+        >
           <g data-name="05_Note Book" id="_05_Note_Book">
             <path
               d="M57,52H3a1,1,0,0,1-1-1V18a1,1,0,0,1,1-1H57a1,1,0,0,1,1,1V51A1,1,0,0,1,57,52Z"
@@ -173,7 +176,8 @@
       >
     </div>
     <!-- Formulaire de mise à jour du profil -->
-    <form
+<form
+
       @submit.prevent="updateUserProfile"
       v-if="user"
       class="p-4 my-5 shadow-lg md:w-3/4 md:m-auto bg-slate-100"
@@ -198,13 +202,43 @@
           class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
+     
+    
+
+        <div class="mt-4">
+          <label for="newPassword" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
+          <input
+            :type="passwordInputType"
+
+            type="password"
+            id="newPassword"
+            v-model="newPassword"
+            class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          />
+        
+        </div><div class="mt-4">
+          <label for="newPassword" class="block text-sm font-medium text-gray-700">Confirmer le nouveau mot de passe</label>
+          <input
+            :type="passwordInputType"
+
+            type="password"
+            id="newPassword"
+            v-model="newPasswordConfirm" placeholder="Confirmer le nouveau mot de passe"
+            class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          />
+           <label class="text-gray-600">
+          <input type="checkbox" @change="togglePasswordVisibility" class="m-1 rounded"  />
+          Afficher le mot de passe
+        </label>
+        </div>
+         
       <button
         type="submit"
         class="px-4 py-2 m-auto mt-4 text-white bg-blue-700 rounded-full"
       >
         Mettre à jour le profil
       </button>
-    </form>
+</form>
 
     <!-- Bloc réservé aux administrateurs -->
     <div
@@ -224,7 +258,10 @@
     <!-- Le reste de la liste des utilisateurs et des boutons de gestion des rôles -->
 
     <!-- Liste des utilisateurs trouvés -->
-    <div v-if="searchResults.length" class="p-4 shadow-lg md:w-3/4 md:m-auto bg-slate-100">
+    <div
+      v-if="searchResults.length"
+      class="p-4 shadow-lg md:w-3/4 md:m-auto bg-slate-100"
+    >
       <div v-for="user in searchResults" :key="user.id" class="mb-2">
         <div class="font-medium">{{ user.name }}</div>
         <div class="text-sm text-gray-600">{{ user.email }}</div>
@@ -276,11 +313,20 @@ export default {
         name: "",
         email: "",
       },
-      isAdmin: false, // Ajoutez cette ligne
+
+    newPassword: "",
+    newPasswordConfirm: "",
+      isAdmin: false,
+         passwordVisible: false,
+      passwordInputType: 'password',
+
     };
   },
   computed: {
     ...mapState(["user"]),
+     passwordInputType() {
+      return this.passwordVisible ? 'text' : 'password';
+    },
   },
   mounted() {
     axios.defaults.debug = true;
@@ -311,10 +357,23 @@ export default {
   },
 
   methods: {
+      togglePasswordVisibility() {
+      this.passwordVisible = !this.passwordVisible;
+      this.passwordInputType = this.passwordVisible ? 'text' : 'password';
+    },
+        async created() {
+      this.user = this.$store.state.user;
+      if (this.user) {
+        this.updatedUser = { ...this.user };
+      } else {
+        await this.$router.push("/login");
+      }
+    },
     initializeUpdatedUser() {
       if (this.user) {
         this.updatedUser.name = this.user.name;
         this.updatedUser.email = this.user.email;
+        this.updatedUser.password = this.user.password;
       }
     },
     initializeIsAdmin() {
@@ -324,22 +383,38 @@ export default {
         this.isAdmin = false;
       }
     },
-    async updateUserProfile() {
-      try {
-        const authToken = localStorage.getItem("token");
-        const headers = { Authorization: `Bearer ${authToken}` };
-        const { data } = await this.$axios.put(
-          `api/v1/auth/${this.user._id}`,
-          this.updatedUser,
-          { headers }
-        );
-        this.$store.commit("setUser", data);
-        this.$toast.success("Profil mis à jour avec succès");
-      } catch (err) {
-        console.error(err);
-        this.$toast.error("Erreur lors de la mise à jour du profil");
-      }
-    },
+async updateUserProfile() {
+  try {
+    const authToken = localStorage.getItem("token");
+    const headers = { Authorization: `Bearer ${authToken}` };
+    const { data } = await this.$axios.put(
+      `api/v1/auth/${this.user._id}`,
+      this.updatedUser,
+      { headers }
+    );
+    this.$store.commit("setUser", data);
+    this.$toast.success("Profil mis à jour avec succès");
+
+    if (this.newPassword && this.newPasswordConfirm && this.newPassword === this.newPasswordConfirm) {
+      const updatePasswordResponse = await this.$axios.put(
+        `api/v1/auth/reset/${this.user._id}`,
+        {
+          password: this.newPassword,
+          passwordConfirmation: this.newPasswordConfirm,
+        },
+        { headers }
+      );
+      this.$toast.success("Mot de passe mis à jour avec succès !");
+    }else{
+      this.$toast.error("Erreur lors de la mise à jour du mot de passe");
+
+    }
+  } catch (err) {
+    console.error(err);
+    this.$toast.error("Erreur lors de la mise à jour du profil");
+
+  }
+},
     async searchUsers() {
       if (this.searchQuery.trim()) {
         try {
@@ -365,14 +440,14 @@ export default {
         const headers = { Authorization: `Bearer ${authToken}` }; // En-tête avec le jeton
         await this.$axios.put(`api/v1/auth/${user._id}`, { role: newRole }, { headers });
         user.role = newRole;
-        this.$toast.success("User role updated successfully");
+        this.$toast.success("Rôle d’utilisateur mis à jour avec succès");
       } catch (err) {
         // if (err.response && err.response.status === 401) {
         //   this.$store.commit('removeToken'); // Supprime le jeton si invalide
         //   this.$router.push('/login'); // Redirige vers la page de connexion
         // } else {
         //   console.error(err);
-        this.$toast.error("Error updating user role");
+        this.$toast.error("Erreur lors de la mise à jour du rôle d’utilisateur");
         // }
       }
     },
@@ -397,6 +472,27 @@ export default {
         }
       }
     },
+      async updatePassword() {
+        try {
+          const authToken = localStorage.getItem("token");
+          const headers = { Authorization: `Bearer ${authToken}` };
+          await this.$axios.put(
+        `api/v1/auth/reset/${this.user._id}`,
+        {
+          password: this.newPassword,
+          passwordConfirmation: this.newPasswordConfirmation
+        },
+        { headers }
+      );
+          this.$toast.success("Mot de passe mis à jour avec succès !");
+        } catch (err) {
+          console.error("Erreur lors de la mise à jour du mot de passe:", err);
+          // Affichez également le message d'erreur renvoyé par le serveur
+          console.error("Message d'erreur du serveur:", err.response.data);
+          this.$toast.error("Erreur lors de la mise à jour du mot de passe");
+        }
+      },
+
   },
   logout() {
     this.$store.commit("removeToken");

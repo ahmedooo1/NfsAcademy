@@ -1,6 +1,6 @@
 <template>
   <div class="w-full mt-8">
-    <h2 class="relative mb-4 text-2xl font-semibold">Commentaires</h2>
+    <h2 class="relative mb-4 text-2xl font-semibold text-gray-600">Commentaires</h2>
     <form
       @submit.prevent="submitComment"
       class="flex items-center px-3 py-2 rounded-lg shadow-md bg-gray-50"
@@ -28,11 +28,11 @@
         </svg>
       </button>
     </form>
-    <div v-if="comments.length > 0">
+    <div v-if="comments.length > 0"  class="">
       <!-- Envelopper la boucle v-for dans une div séparée -->
       <div>
-<div v-for="(comment, index) in comments" :key="comment._id" class="flex flex-col flex-wrap w-full h-auto p-2 mt-1 rounded-lg shadow-md bg-gray-50" v-if="index < numOfCommentsToShow">            {{ comment.userId.name }}
-          </p>
+          <div v-for="(comment, index) in comments.slice().reverse()" :key="comment._id" class="flex flex-col flex-wrap w-full h-auto p-2 mt-1 rounded-lg shadow-md bg-gray-50" v-if="index < numOfCommentsToShow">
+         <p class="mb-1 font-bold">{{ comment.userId.name }}</p>
           <p
             v-if="comment.content"
             class="w-full overflow-auto break-words md:w-3/4"
@@ -58,14 +58,14 @@
           </div>
         </div>
        
-   </div>
-    </div>
+   </div> 
+    </div><div v-else class="text-gray-600">
+        <p>Aucun commentaire pour l'instant.</p>
+      </div>
     <div v-if="numOfCommentsToShow < comments.length" class="mt-2 text-center">
   <button @click="numOfCommentsToShow += 6" class="text-blue-600 underline hover:text-blue-800 focus:text-blue-800">Lire la suite</button>
 </div>
-       <div v-else>
-        <p>Aucun commentaire pour l'instant. Soyez le premier à commenter !</p>
-      </div>
+      
   </div>
 </template>
 
@@ -159,19 +159,19 @@ export default {
       );
     },
     async fetchComments() {
-      try {
-        const response = await this.$axios.get(
-          `/api/v1/comments?stuffId=${this.guideId}`
-        );
-        if (response.data.success && Array.isArray(response.data.data)) {
-          this.comments = response.data.data;
-        } else {
-          console.error("API response is not an array:", response.data);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    },
+  try {
+    const response = await this.$axios.get(
+      `/api/v1/comments?stuffId=${this.guideId}`
+    );
+    if (response.data.success && Array.isArray(response.data.data)) {
+      this.comments = response.data.data.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+    } else {
+      console.error("API response is not an array:", response.data);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+},
 
     async refreshComments() {
       try {

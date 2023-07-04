@@ -349,7 +349,7 @@ export default {
           password: this.password,
         });
         this.$store.commit("setToken", data.token);
-        this.showLoginForm();
+        this.backToLogin();
       } catch (err) {
         this.$toast.error("Erreur interne du serveur");
       }

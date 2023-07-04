@@ -31,6 +31,7 @@
       </div>
       <Comments :guideId="guide._id" />
     </div>
+    <Footer/>
   </div>
 </template>
 
