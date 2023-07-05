@@ -54,7 +54,7 @@
     >
       <NuxtLink
         to="/create"
-        class="flex flex-col items-center justify-center p-3 font-bold rounded-md shadow-lg bg-slate-100 text-l md:text-2xl md:w-3/4 md:m-auto"
+        class="flex flex-col items-center justify-center p-3 font-bold border-2 border-dashed rounded-md shadow-lg hover:border-slate-400 bg-slate-100 text-l md:text-2xl md:w-3/4 md:m-auto"
       >
         <svg
           viewBox="0 0 64 64"
@@ -272,27 +272,27 @@
             @click="updateRole(user, 'admin')"
             class="px-2 py-1 text-white bg-blue-500 rounded"
           >
-            Set as Admin
+            Mettre en Admin
           </button>
           <button
             v-if="user.role !== 'redacteur'"
             @click="updateRole(user, 'redacteur')"
             class="px-2 py-1 text-white bg-green-500 rounded"
           >
-            Set as Redacteur
+            Mettre en Redacteur
           </button>
           <button
             v-if="user.role !== 'user'"
             @click="updateRole(user, 'user')"
             class="px-2 py-1 text-white bg-gray-500 rounded"
           >
-            Set as User
+            Mettre en utilisateur
           </button>
           <button
             @click="deleteUser(user)"
             class="px-2 py-1 text-white bg-red-500 rounded"
           >
-            Delete
+            Supprimer
           </button>
         </div>
       </div>
