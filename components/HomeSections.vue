@@ -1,51 +1,74 @@
 <template>
   <div>
     <div
-      class="w-full h-[514px] bg-blue-700 rounded-bl-[278.50px] rounded-br-[278.50px] flex flex-col justify-center items-center"
+      class="w-full  sm:h-[514px]  bg-blue-700 rounded-bl-[278.50px] rounded-br-[278.50px] flex flex-col justify-center items-center"
     >
       <!--ici-->
-      <div class="p-14"></div>
-      <div class="flex flex-col items-center justify-center">
-        <h1 class="text-4xl text-center text-white">Bienvenue sur votre site</h1>
 
-        <img
-          src="../assets/images/logoWhite.png"
-          alt="Logo"
-          class="w-full m-10 fill-white"
-        />
-
-        <button
-          @click="scrollToQuiSommesNous"
-          class="mb-10 font-bold text-gray-900 bg-white rounded-full hover:bg-gray-300"
+      <div
+        class="container flex justify-center p-6 py-12 mx-auto md:mt-0 md:flex-row md:justify-between "
+      >
+        <div
+          class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
         >
+          <h1 class="text-xl font-bold text-white sm:text-3xl">
+            Bienvenue sur votre site :
+          </h1>
+          <h1 class="my-2 text-lg font-bold">
+            <span class="p-2 text-white bg-black">NFS</span
+            ><span class="p-2 text-black bg-white">Academy</span>
+          </h1>
+          <p class="mt-3 mb-8 text-lg text-white sm:mb-12">
+votre solution pour approfondir vos compétences          <br class="hidden md:inline lg:hidden" />dans différents domaines.
+            ligula sem
+          </p>
           <div
-            class="relative inline-flex items-center px-8 py-3 overflow-hidden text-gray-900 rounded group focus:outline-none focus:ring active:text-gray-900"
+            class="flex flex-col sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
           >
-            <span class="absolute transition-all -end-full group-hover:end-4">
-              <svg
-                class="w-5 h-5 rtl:rotate-180"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <button
+              @click="scrollToQuiSommesNous"
+              class="font-bold text-gray-900 bg-white rounded-full hover:bg-gray-300"
+            >
+              <div
+                class="relative inline-flex items-center px-8 py-3 overflow-hidden text-gray-900 rounded group focus:outline-none focus:ring active:text-gray-900"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </span>
+                <span class="absolute transition-all -end-full group-hover:end-4">
+                  <svg
+                    class="w-5 h-5 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
 
-            <span class="text-sm font-medium transition-all group-hover:me-4">
-              Qui sommes nous ?
-            </span>
+                <span class="text-sm font-medium transition-all group-hover:me-4">
+                  Qui sommes nous ?
+                </span>
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
+        <!---hero img----->
+        <div
+          class="items-center justify-center hidden p-6 mt-8 sm:flex lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 "
+        >
+          <img
+            src="../\assets\images\instapostLogo.png"
+            alt=""
+            class="hidden object-contain h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 sm:block"
+          />
+        </div>
       </div>
       <!-- Flèche animée -->
-      <div class="z-0 animate-bounce">
+      <div class="bottom-0 z-0 hidden animate-bounce sm:block ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -57,7 +80,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           z-index="9"
-          class="z-0 mt-20 text-white"
+          class="z-0 text-white"
         >
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
@@ -75,27 +98,33 @@
 
     <!-------checkout de site (petits details)-------->
     <section class="flex flex-wrap justify-center text-white bg-blue-700 body-font">
-      <div class="container flex flex-wrap items-center justify-between px-5 py-24 mx-auto">
+      <div
+        class="container flex flex-wrap items-center justify-between px-5 py-24 mx-auto"
+      >
         <div
           class="flex flex-wrap content-start mt-auto mb-auto -mx-4 lg:w-1/2 sm:w-2/3 sm:pr-10"
         >
           <div class="w-full px-4 mb-6 sm:p-4">
             <h1 class="mb-2 text-xl font-medium text-white title-font">
-              Explorez le monde de l'informatique avec NFS Academy
+              Améliorez vos connaissances avec NFS Academy
             </h1>
             <div class="leading-relaxed">
               NFS Academy vous offre la possibilité d'explorer et de perfectionner vos
-              compétences en informatique. Avec une variété de cours, de guides et de
+              compétences. Avec une variété de cours, de guides et de
               tutoriels en ligne, NFS Academy vous permet d'apprendre à votre propre
               rythme, tout en bénéficiant du soutien personnalisé d'experts de
               l'industrie. Rejoignez la communauté en ligne pour échanger des
-              connaissances et recevoir des conseils précieux pour réussir dans le monde
-              de l'informatique.
+              connaissances et recevoir des conseils précieux pour réussir.
             </div>
           </div>
         </div>
-        <div class="mt-6 overflow-hidden rounded-lg lg:w-1/2 sm:w-1/3 sm:mt-0">
-          <svg id="fill" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="fill-current w-60">
+        <div class="flex justify-center w-full mt-6 overflow-hidden rounded-lg lg:w-1/2 sm:w-1/3 sm:mt-0">
+          <svg
+            id="fill"
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-auto fill-current w-60"
+          >
             <path
               d="M36,56V49H28v7H23.074A3.074,3.074,0,0,0,20,59.074V61H44V59.074A3.074,3.074,0,0,0,40.926,56Z"
               style="fill: #e5e6eb"
