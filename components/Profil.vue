@@ -404,9 +404,9 @@ async updateUserProfile() {
         },
         { headers }
       );
-      this.$toast.success("Mot de passe mis à jour avec succès !");
+      console.log("Mot de passe mis à jour avec succès !");
     }else{
-      this.$toast.error("Erreur lors de la mise à jour du mot de passe");
+      console.log("Erreur lors de la mise à jour du mot de passe");
 
     }
   } catch (err) {

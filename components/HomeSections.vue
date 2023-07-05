@@ -222,14 +222,13 @@ votre solution pour approfondir vos compétences          <br class="hidden md:i
             </div>
             <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
               <h2 class="mb-1 text-xl font-medium title-font">
-                Devenez expert en informatique avec NFS Academy
+                Devenez expert avec NFS Academy
               </h2>
               <p class="leading-relaxed">
                 NFS Academy vous propose des cours en ligne pour maîtriser plusieurs
-                domaines de l'informatique, notamment la programmation, la cybersécurité
-                et les réseaux. Vous pourrez apprendre avec des professionnels de
+                domaines. Vous pourrez apprendre avec des professionnels de
                 l'industrie qui partagent leur expertise avec vous. Rejoignez la
-                communauté et devenez un expert en informatique.
+                communauté et devenez un expert dans vos future domaines.
               </p>
             </div>
           </div>
@@ -268,8 +267,8 @@ votre solution pour approfondir vos compétences          <br class="hidden md:i
               <p class="leading-relaxed">
                 NFS Academy est une plateforme qui offre des guides et des tutoriels
                 informatiques en ligne. Vous pouvez accéder à une bibliothèque complète de
-                ressources pour vous aider à apprendre de nouvelles compétences en
-                informatique. Partagez vos guides et tutoriels pour aider la communauté et
+                ressources pour vous aider à apprendre de nouvelles compétences dans différents domaines.
+                 Partagez vos guides et tutoriels pour aider la communauté et
                 obtenir des commentaires constructifs.
               </p>
             </div>
