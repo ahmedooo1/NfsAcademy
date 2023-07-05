@@ -1,3 +1,13 @@
+
+import cookies from './cookies';
+
+
+
+
+export const modules = {
+  cookies
+}
+
 export const state = () => ({
   token: null,
   user: null,
@@ -33,18 +43,19 @@ export const getters = {
 };
 
 export const actions = {
-  nuxtServerInit({ commit }, { req }) {
-    if (process.client) {
-      const token = localStorage.getItem('token');
-      if (token) {
-        commit('setToken', token);
+    nuxtServerInit({  commit }, { req }) {
+      
+      if (process.client) {
+        const token = localStorage.getItem('token');
+        if (token) {
+          commit('setToken', token);
+        }
+        const user = localStorage.getItem('user');
+        if (user) {
+          commit('setUser', JSON.parse(user));
+        }
       }
-      const user = localStorage.getItem('user');
-      if (user) {
-        commit('setUser', JSON.parse(user));
-      }
-    }
-    
-  },
+    },
+  
   
 };

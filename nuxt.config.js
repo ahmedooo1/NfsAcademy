@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'NfsAcademy_front',
+    title: 'NfsAcademy',
     htmlAttrs: {
       lang: 'fr'
     },
@@ -11,7 +11,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'nfs academy online guides courses, free guides, guides gratuits, gratuit' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -29,6 +29,7 @@ export default {
     '~/assets/css/flowbite.css'
   ],
   plugins:[
+    '~/plugins/cookies.js',
     '~/plugins/vue-scrollto',
     '~/plugins/client-only-placeholder.js',
   { src: '~/plugins/toast.js', mode: 'client' },
@@ -48,6 +49,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'cookie-universal-nuxt',
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

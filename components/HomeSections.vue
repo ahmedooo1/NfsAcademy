@@ -10,7 +10,7 @@
       >
         <div
           class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
-        >
+        > <CookiesNotice />
           <h1 class="text-xl font-bold text-white sm:text-3xl">
             Bienvenue sur votre site :
           </h1>
@@ -364,7 +364,11 @@ votre solution pour approfondir vos compétences          <br class="hidden md:i
   </div>
 </template>
 <script>
+import CookiesNotice from '@/components/CookiesNotice.vue'
 export default {
+    components: {
+    CookiesNotice
+  },
   methods: {
     scrollToQuiSommesNous() {
       const quiSommesNous = document.querySelector("#qui-sommes-nous");

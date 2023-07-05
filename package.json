@@ -33,6 +33,7 @@
     "@tiptap/starter-kit": "^2.0.3",
     "@tiptap/vue-2": "^2.0.3",
     "animate.css": "^4.1.1",
+    "cookie-universal-nuxt": "^2.2.2",
     "core-js": "^3.25.3",
     "flowbite": "^1.6.6",
     "nuxt": "^2.15.8",
@@ -40,6 +41,7 @@
     "quill": "^1.3.7",
     "tiptap": "^1.32.2",
     "tiptap-vuetify": "^2.24.0",
+    "universal-cookie": "^4.0.4",
     "vue": "^2.7.10",
     "vue-burger-menu": "^2.0.5",
     "vue-pagination-2": "^3.1.0",
@@ -48,7 +50,8 @@
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "vue-toastification": "^1.7.14",
-    "vuestic-components": "^1.1.2"
+    "vuestic-components": "^1.1.2",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.3.3",
