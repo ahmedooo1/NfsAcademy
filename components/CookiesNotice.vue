@@ -2,7 +2,7 @@
 
 <div v-if="!cookies.accepted" class="fixed bottom-0 left-0 z-40" ref="fixedEl">
     <div class="fixed w-full max-w-md p-4 space-y-2 bg-white border-2 border-gray-300 rounded-lg shadow-lg left-4 bottom-4 sm:w-1/2">
-      <p class="text-base font-medium"> Ce site utilise des cookies pour améliorer votre expérience utilisateur. <span class="text-2xl">🍪</span></p>
+      <p class="text-base font-medium">NFS Academy utilise des cookies pour améliorer votre expérience utilisateur. <span class="text-2xl">🍪</span></p>
       <div class="flex flex-col sm:flex-row sm:space-x-2 sm:justify-end">
         <button class="w-full px-4 py-2 mt-2 text-white bg-green-500 rounded-md btn btn-gray-400 sm:mt-0 sm:w-auto hover:bg-green-700" @click="acceptCookies">
           Accepter

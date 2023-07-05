@@ -20,7 +20,7 @@
           </h1>
           <p class="mt-3 mb-8 text-lg text-white sm:mb-12">
 votre solution pour approfondir vos compétences          <br class="hidden md:inline lg:hidden" />dans différents domaines.
-            ligula sem
+          
           </p>
           <div
             class="flex flex-col sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
