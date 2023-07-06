@@ -11,6 +11,9 @@ export default {
       reject(state) { 
         state.rejected = true;
       },
+      setRejected(state, value) { 
+        state.rejected = value;
+      },
     },
   
     actions: {

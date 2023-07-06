@@ -26,11 +26,12 @@ export default {
   methods: {
     ...mapActions({
       acceptCookies: 'cookies/accept',
-      rejectCookiesAction: 'cookies/reject' // Ajoutez cette ligne pour mapper l'action "rejectCookies"
+      rejectCookiesAction: 'cookies/reject' 
 
     }),
-    rejectCookies() {
+     rejectCookies() {
       this.$cookies.set('accepted', false);
+      this.$cookies.set('rejected', true, { path: '/', maxAge: 60 * 60 * 24 * 365 });
       this.rejectCookiesAction();
     }
   },
@@ -40,14 +41,19 @@ export default {
     }
   },
   mounted() {
-    const accepted = this.$cookies.get('accepted');
+     const accepted = this.$cookies.get('accepted');
     if (accepted) {
       this.$store.dispatch('cookies/accept');
     } else {
-      setTimeout(() => {
-        this.$el.querySelector('.fixed').classList.add('animate-popup');
-        this.$el.querySelectorAll('.btn')[0].focus();
-      }, 2000);
+      const rejected = this.$cookies.get('rejected'); 
+      if (rejected) {
+        this.$store.commit('cookies/setRejected', true); 
+      } else {
+        setTimeout(() => {
+          this.$el.querySelector('.fixed').classList.add('animate-popup');
+          this.$el.querySelectorAll('.btn')[0].focus();
+        }, 2000);
+      }
     }
   },
   beforeDestroy() {
