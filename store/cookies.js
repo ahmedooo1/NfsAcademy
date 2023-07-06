@@ -1,11 +1,15 @@
 export default {
     state: () => ({
       accepted: false,
+      rejected: false, // Ajoutez cette ligne pour le statut des cookies rejetés
     }),
   
     mutations: {
       accept(state) {
         state.accepted = true;
+      },
+      reject(state) { 
+        state.rejected = true;
       },
     },
   
@@ -13,6 +17,10 @@ export default {
       accept({ commit }) {
         commit('accept');
         this.$cookies.set('accepted', true, { path: '/', maxAge: 60 * 60 * 24 * 365 });
+      },
+      reject({ commit }) { 
+        commit('reject');
+        this.$cookies.set('accepted', false, { path: '/', maxAge: 60 * 60 * 24 * 365 });
       },
     },
   };
