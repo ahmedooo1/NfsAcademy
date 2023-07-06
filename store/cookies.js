@@ -1,7 +1,7 @@
 export default {
     state: () => ({
       accepted: false,
-      rejected: false, // Ajoutez cette ligne pour le statut des cookies rejetés
+      rejected: false, 
     }),
   
     mutations: {
