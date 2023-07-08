@@ -1,6 +1,7 @@
 <template>
-  <div class="p-4">
-    <h1 class="flex justify-center w-full m-auto mb-4 text-2xl font-bold text-center">
+  <div class="mb-4">
+  <div class="w-full  sm:h-[214px]  bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center">  
+     <h1 class="p-2 text-2xl font-bold text-center bg-white rounded-full ">
       <svg
         height="32"
         id="svg5"
@@ -42,12 +43,14 @@
             "
           />
         </g>
-      </svg>
-    </h1>
-    <!-- Profil de l'utilisateur actuel -->
-    <h1 v-if="user" class="my-4 text-3xl font-medium text-center">
+      </svg>  <!-- Profil de l'utilisateur actuel -->
+      </h1><h1 v-if="user" class="text-3xl font-medium text-center text-white ">
       Bonjour, {{ user.name }}!
     </h1>
+  
+  </div>
+   
+
     <div
       v-if="$store.getters.isAdminOrRedacteur"
       class="flex flex-col items-center justify-center my-8"
@@ -180,7 +183,7 @@
 
       @submit.prevent="updateUserProfile"
       v-if="user"
-      class="p-4 my-5 shadow-lg md:w-3/4 md:m-auto bg-slate-100"
+      class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100"
     >
       <h1 class="mb-4 text-2xl font-bold text-center">Informations personnelles</h1>
 
