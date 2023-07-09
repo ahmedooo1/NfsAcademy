@@ -34,6 +34,9 @@ export default {
     '~/plugins/client-only-placeholder.js',
   { src: '~/plugins/toast.js', mode: 'client' },
   '~/plugins/axios.js',
+  { src: '~/plugins/vue-apexcharts.js', mode: 'client' }
+
+  
   ],
  
   // Auto import components: https://go.nuxtjs.dev/config-components

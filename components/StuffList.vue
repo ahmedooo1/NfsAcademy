@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- Barre de recherche -->
-<div class="w-full  sm:h-[114px]  bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center">
+<div class="w-full  sm:h-[114px] h-[214px]  bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center">
   <label for="search" class="hidden">Recherche</label>
-  <div class="relative z-0 flex w-full mx-auto md:w-1/2">
+  <div class="relative z-0 flex w-3/4 mx-auto sm:w-full md:w-1/2">
     <input type="text"
            id="search"
            v-model="searchTerm"

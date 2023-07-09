@@ -33,6 +33,8 @@
     "@tiptap/starter-kit": "^2.0.3",
     "@tiptap/vue-2": "^2.0.3",
     "animate.css": "^4.1.1",
+    "apexcharts": "^3.41.0",
+    "chart.js": "^4.3.0",
     "cookie-universal-nuxt": "^2.2.2",
     "core-js": "^3.25.3",
     "flowbite": "^1.6.6",
@@ -43,7 +45,10 @@
     "tiptap-vuetify": "^2.24.0",
     "universal-cookie": "^4.0.4",
     "vue": "^2.7.10",
+    "vue-apexcharts": "^1.6.2",
     "vue-burger-menu": "^2.0.5",
+    "vue-chart-3": "^3.1.8",
+    "vue-chartjs": "^5.2.0",
     "vue-pagination-2": "^3.1.0",
     "vue-quill-editor": "^3.0.6",
     "vue-scrollto": "^2.20.0",
@@ -54,6 +59,8 @@
     "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@nuxtjs/tailwindcss": "^5.3.3",
     "postcss": "^8.4.17",
     "tailwindcss-animated": "^1.0.1",

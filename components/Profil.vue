@@ -1,56 +1,60 @@
 <template>
   <div class="mb-4">
-  <div class="w-full  sm:h-[214px]  bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center">  
-     <h1 class="p-2 text-2xl font-bold text-center bg-white rounded-full ">
-      <svg
-        height="32"
-        id="svg5"
-        version="1.1"
-        viewBox="0 0 32 32"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:svg="http://www.w3.org/2000/svg"
-        class="w-24 h-24 text-white fill-current"
-      >
-        <defs id="defs2" />
-        <g id="layer1" transform="translate(-12,-484)">
-          <path
-            d="m 28,486 c -3.854145,0 -7,3.14585 -7,7 0,3.85415 3.145855,7 7,7 3.854145,0 7,-3.14585 7,-7 0,-3.85415 -3.145855,-7 -7,-7 z m 0,2 c 2.773266,0 5,2.22673 5,5 0,2.77327 -2.226734,5 -5,5 -2.773266,0 -5,-2.22673 -5,-5 0,-2.77327 2.226734,-5 5,-5 z"
-            id="circle27474"
-            style="
-              color: #000000;
-              fill: #00c89f;
-              fill-opacity: 1;
-              fill-rule: evenodd;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              stroke-miterlimit: 4.1;
-              -inkscape-stroke: none;
-            "
-          />
-          <path
-            d="m 20.5,501 c -3.583699,0 -6.5,2.9163 -6.5,6.5 0,3.5837 2.916301,6.5 6.5,6.5 h 15 c 3.583699,0 6.5,-2.9163 6.5,-6.5 0,-3.5837 -2.916301,-6.5 -6.5,-6.5 z m 0,2 h 15 c 2.510295,0 4.5,1.98971 4.5,4.5 0,2.51029 -1.989705,4.5 -4.5,4.5 h -15 c -2.510295,0 -4.5,-1.98971 -4.5,-4.5 0,-2.51029 1.989705,-4.5 4.5,-4.5 z"
-            id="rect27480"
-            style="
-              color: #000000;
-              fill: #002cba;
-              fill-opacity: 1;
-              fill-rule: evenodd;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              stroke-miterlimit: 4.1;
-              -inkscape-stroke: none;
-            "
-          />
-        </g>
-      </svg>  <!-- Profil de l'utilisateur actuel -->
-      </h1><h1 v-if="user" class="text-3xl font-medium text-center text-white ">
-      Bonjour, {{ user.name }}!
-    </h1>
-  
-  </div>
-   
-
+    <div
+      class="w-full sm:h-[214px] h-[314px] bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center"
+    >
+      <h1 class="p-2 text-2xl font-bold text-center bg-white rounded-full">
+        <svg
+          height="32"
+          id="svg5"
+          version="1.1"
+          viewBox="0 0 32 32"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          class="w-24 h-24 text-white fill-current"
+        >
+          <defs id="defs2" />
+          <g id="layer1" transform="translate(-12,-484)">
+            <path
+              d="m 28,486 c -3.854145,0 -7,3.14585 -7,7 0,3.85415 3.145855,7 7,7 3.854145,0 7,-3.14585 7,-7 0,-3.85415 -3.145855,-7 -7,-7 z m 0,2 c 2.773266,0 5,2.22673 5,5 0,2.77327 -2.226734,5 -5,5 -2.773266,0 -5,-2.22673 -5,-5 0,-2.77327 2.226734,-5 5,-5 z"
+              id="circle27474"
+              style="
+                color: #000000;
+                fill: #00c89f;
+                fill-opacity: 1;
+                fill-rule: evenodd;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 4.1;
+                -inkscape-stroke: none;
+              "
+            />
+            <path
+              d="m 20.5,501 c -3.583699,0 -6.5,2.9163 -6.5,6.5 0,3.5837 2.916301,6.5 6.5,6.5 h 15 c 3.583699,0 6.5,-2.9163 6.5,-6.5 0,-3.5837 -2.916301,-6.5 -6.5,-6.5 z m 0,2 h 15 c 2.510295,0 4.5,1.98971 4.5,4.5 0,2.51029 -1.989705,4.5 -4.5,4.5 h -15 c -2.510295,0 -4.5,-1.98971 -4.5,-4.5 0,-2.51029 1.989705,-4.5 4.5,-4.5 z"
+              id="rect27480"
+              style="
+                color: #000000;
+                fill: #002cba;
+                fill-opacity: 1;
+                fill-rule: evenodd;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 4.1;
+                -inkscape-stroke: none;
+              "
+            />
+          </g>
+        </svg>
+        <!-- Profil de l'utilisateur actuel -->
+      </h1>
+      <h1 v-if="user" class="text-3xl font-medium text-center text-white">
+        Bonjour, {{ user.name }}!
+      </h1>
+    </div>
+    <!-------donut chart graph-------->
+    <DonutChart v-if="isAdmin" />
+    <!---form pour ajouter un guide---->
     <div
       v-if="$store.getters.isAdminOrRedacteur"
       class="flex flex-col items-center justify-center my-8"
@@ -179,8 +183,7 @@
       >
     </div>
     <!-- Formulaire de mise à jour du profil -->
-<form
-
+    <form
       @submit.prevent="updateUserProfile"
       v-if="user"
       class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100"
@@ -205,43 +208,44 @@
           class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
-     
-    
 
-        <div class="mt-4">
-          <label for="newPassword" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
-          <input
-            :type="passwordInputType"
-
-            type="password"
-            id="newPassword"
-            v-model="newPassword"
-            class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          />
-        
-        </div><div class="mt-4">
-          <label for="newPassword" class="block text-sm font-medium text-gray-700">Confirmer le nouveau mot de passe</label>
-          <input
-            :type="passwordInputType"
-
-            type="password"
-            id="newPassword"
-            v-model="newPasswordConfirm" placeholder="Confirmer le nouveau mot de passe"
-            class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          />
-           <label class="text-gray-600">
-          <input type="checkbox" @change="togglePasswordVisibility" class="m-1 rounded"  />
+      <div class="mt-4">
+        <label for="newPassword" class="block text-sm font-medium text-gray-700"
+          >Nouveau mot de passe</label
+        >
+        <input
+          :type="passwordInputType"
+          type="password"
+          id="newPassword"
+          v-model="newPassword"
+          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+      <div class="mt-4">
+        <label for="newPassword" class="block text-sm font-medium text-gray-700"
+          >Confirmer le nouveau mot de passe</label
+        >
+        <input
+          :type="passwordInputType"
+          type="password"
+          id="newPassword"
+          v-model="newPasswordConfirm"
+          placeholder="Confirmer le nouveau mot de passe"
+          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        />
+        <label class="text-gray-600">
+          <input type="checkbox" @change="togglePasswordVisibility" class="m-1 rounded" />
           Afficher le mot de passe
         </label>
-        </div>
-         
+      </div>
+
       <button
         type="submit"
         class="px-4 py-2 m-auto mt-4 text-white bg-blue-700 rounded-full"
       >
         Mettre à jour le profil
       </button>
-</form>
+    </form>
 
     <!-- Bloc réservé aux administrateurs -->
     <div
@@ -317,18 +321,17 @@ export default {
         email: "",
       },
 
-    newPassword: "",
-    newPasswordConfirm: "",
+      newPassword: "",
+      newPasswordConfirm: "",
       isAdmin: false,
-         passwordVisible: false,
-      passwordInputType: 'password',
-
+      passwordVisible: false,
+      passwordInputType: "password",
     };
   },
   computed: {
     ...mapState(["user"]),
-     passwordInputType() {
-      return this.passwordVisible ? 'text' : 'password';
+    passwordInputType() {
+      return this.passwordVisible ? "text" : "password";
     },
   },
   mounted() {
@@ -360,11 +363,11 @@ export default {
   },
 
   methods: {
-      togglePasswordVisibility() {
+    togglePasswordVisibility() {
       this.passwordVisible = !this.passwordVisible;
-      this.passwordInputType = this.passwordVisible ? 'text' : 'password';
+      this.passwordInputType = this.passwordVisible ? "text" : "password";
     },
-        async created() {
+    async created() {
       this.user = this.$store.state.user;
       if (this.user) {
         this.updatedUser = { ...this.user };
@@ -386,38 +389,40 @@ export default {
         this.isAdmin = false;
       }
     },
-async updateUserProfile() {
-  try {
-    const authToken = localStorage.getItem("token");
-    const headers = { Authorization: `Bearer ${authToken}` };
-    const { data } = await this.$axios.put(
-      `api/v1/auth/${this.user._id}`,
-      this.updatedUser,
-      { headers }
-    );
-    this.$store.commit("setUser", data);
-    this.$toast.success("Profil mis à jour avec succès");
+    async updateUserProfile() {
+      try {
+        const authToken = localStorage.getItem("token");
+        const headers = { Authorization: `Bearer ${authToken}` };
+        const { data } = await this.$axios.put(
+          `api/v1/auth/${this.user._id}`,
+          this.updatedUser,
+          { headers }
+        );
+        this.$store.commit("setUser", data);
+        this.$toast.success("Profil mis à jour avec succès");
 
-    if (this.newPassword && this.newPasswordConfirm && this.newPassword === this.newPasswordConfirm) {
-      const updatePasswordResponse = await this.$axios.put(
-        `api/v1/auth/reset/${this.user._id}`,
-        {
-          password: this.newPassword,
-          passwordConfirmation: this.newPasswordConfirm,
-        },
-        { headers }
-      );
-      console.log("Mot de passe mis à jour avec succès !");
-    }else{
-      console.log("Erreur lors de la mise à jour du mot de passe");
-
-    }
-  } catch (err) {
-    console.error(err);
-    this.$toast.error("Erreur lors de la mise à jour du profil");
-
-  }
-},
+        if (
+          this.newPassword &&
+          this.newPasswordConfirm &&
+          this.newPassword === this.newPasswordConfirm
+        ) {
+          const updatePasswordResponse = await this.$axios.put(
+            `api/v1/auth/reset/${this.user._id}`,
+            {
+              password: this.newPassword,
+              passwordConfirmation: this.newPasswordConfirm,
+            },
+            { headers }
+          );
+          console.log("Mot de passe mis à jour avec succès !");
+        } else {
+          console.log("Erreur lors de la mise à jour du mot de passe");
+        }
+      } catch (err) {
+        console.error(err);
+        this.$toast.error("Erreur lors de la mise à jour du profil");
+      }
+    },
     async searchUsers() {
       if (this.searchQuery.trim()) {
         try {
@@ -475,27 +480,26 @@ async updateUserProfile() {
         }
       }
     },
-      async updatePassword() {
-        try {
-          const authToken = localStorage.getItem("token");
-          const headers = { Authorization: `Bearer ${authToken}` };
-          await this.$axios.put(
-        `api/v1/auth/reset/${this.user._id}`,
-        {
-          password: this.newPassword,
-          passwordConfirmation: this.newPasswordConfirmation
-        },
-        { headers }
-      );
-          this.$toast.success("Mot de passe mis à jour avec succès !");
-        } catch (err) {
-          console.error("Erreur lors de la mise à jour du mot de passe:", err);
-          // Affichez également le message d'erreur renvoyé par le serveur
-          console.error("Message d'erreur du serveur:", err.response.data);
-          this.$toast.error("Erreur lors de la mise à jour du mot de passe");
-        }
-      },
-
+    async updatePassword() {
+      try {
+        const authToken = localStorage.getItem("token");
+        const headers = { Authorization: `Bearer ${authToken}` };
+        await this.$axios.put(
+          `api/v1/auth/reset/${this.user._id}`,
+          {
+            password: this.newPassword,
+            passwordConfirmation: this.newPasswordConfirmation,
+          },
+          { headers }
+        );
+        this.$toast.success("Mot de passe mis à jour avec succès !");
+      } catch (err) {
+        console.error("Erreur lors de la mise à jour du mot de passe:", err);
+        // Affichez également le message d'erreur renvoyé par le serveur
+        console.error("Message d'erreur du serveur:", err.response.data);
+        this.$toast.error("Erreur lors de la mise à jour du mot de passe");
+      }
+    },
   },
   logout() {
     this.$store.commit("removeToken");
