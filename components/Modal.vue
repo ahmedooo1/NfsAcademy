@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed inset-0 z-50 overflow-y-auto "
+    class="fixed inset-0 z-50 overflow-y-auto"
     aria-labelledby="modal-title"
     role="dialog"
     aria-modal="true"
@@ -22,12 +22,14 @@
       >
 
       <div
-        class="z-50 inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        class="dark:text-slate-200 dark:bg-slate-900 z-50 inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
       >
-        <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
+        <div
+          class="dark:text-slate-200 dark:bg-slate-900 px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse"
+        >
           <button
             type="button"
-            class="inline-flex items-center justify-center px-4 py-2 -ml-4 -mr-2 text-gray-400 bg-white rounded-md shadow-sm hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class="dark:text-slate-200 dark:bg-slate-900 inline-flex items-center justify-center px-4 py-2 -ml-4 -mr-2 text-gray-400 bg-white rounded-md shadow-sm hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             @click="closeModal"
           >
             <span class="sr-only">Fermer</span>
@@ -49,11 +51,11 @@
           </button>
         </div>
         <div
-          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
+          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4 dark:text-slate-200 dark:bg-slate-900"
           v-if="showLoginForm"
         >
           <h3
-            class="text-lg font-medium leading-6 text-center text-gray-900"
+            class="text-lg font-medium leading-6 text-center text-gray-900 dark:text-slate-200 dark:bg-slate-900"
             id="modal-title"
           >
             Connexion
@@ -63,7 +65,7 @@
               <div>
                 <label
                   for="email"
-                  class="block text-sm font-medium leading-6 text-gray-900"
+                  class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
                   >Email</label
                 >
                 <div class="mt-2">
@@ -74,7 +76,7 @@
                     name="email"
                     autocomplete="email"
                     required
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="dark:text-slate-200 dark:bg-slate-900 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -83,7 +85,7 @@
                 <div class="flex items-center justify-between">
                   <label
                     for="password"
-                    class="block text-sm font-medium leading-6 text-gray-900"
+                    class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
                     >Mot de passe</label
                   >
                   <div class="text-sm">
@@ -103,7 +105,7 @@
                     type="password"
                     autocomplete="current-password"
                     required
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -117,7 +119,9 @@
                 </button>
               </div>
             </form>
-            <p class="mt-10 text-sm text-center text-gray-500">
+            <p
+              class="mt-10 text-sm text-center text-gray-500 dark:text-slate-200 dark:bg-slate-900"
+            >
               Vous n'avez un compte?
               <a
                 href="#"
@@ -130,12 +134,12 @@
         </div>
         <!-- Formulaire d'inscription -->
         <div
-          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
+          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4 dark:text-slate-200 dark:bg-slate-900"
           v-if="showRegisterForm"
         >
           <!-- Contenu du formulaire d'inscription -->
           <h3
-            class="text-lg font-medium leading-6 text-center text-gray-900"
+            class="text-lg font-medium leading-6 text-center text-gray-900 dark:text-slate-200 dark:bg-slate-900"
             id="modal-title"
           >
             Inscription
@@ -144,7 +148,7 @@
             <div>
               <label
                 for="name"
-                class="block text-sm font-medium leading-6 text-gray-900"
+                class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
                 >Nom</label
               >
               <div class="mt-2">
@@ -155,7 +159,7 @@
                   name="name"
                   autocomplete="name"
                   required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -163,7 +167,7 @@
             <div>
               <label
                 for="email"
-                class="block text-sm font-medium leading-6 text-gray-900"
+                class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
                 >Email</label
               >
               <div class="mt-2">
@@ -174,7 +178,7 @@
                   name="email"
                   autocomplete="email"
                   required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -183,7 +187,7 @@
               <div class="flex items-center justify-between">
                 <label
                   for="password"
-                  class="block text-sm font-medium leading-6 text-gray-900"
+                  class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
                   >Mot de passe</label
                 >
               </div>
@@ -195,7 +199,7 @@
                   type="password"
                   autocomplete="current-password"
                   required
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -223,11 +227,11 @@
 
         <!-- Formulaire de réinitialisation du mot de passe -->
         <div
-          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4"
+          class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4 dark:text-slate-200 dark:bg-slate-900"
           v-if="showResetPasswordForm"
         >
           <h3
-            class="text-lg font-medium leading-6 text-center text-gray-900"
+            class="text-lg font-medium leading-6 text-center text-gray-900 dark:text-slate-200 dark:bg-slate-900"
             id="modal-title"
           >
             Réinitialisation du mot de passe
@@ -237,7 +241,7 @@
               <div>
                 <label
                   for="email"
-                  class="block text-sm font-medium leading-6 text-gray-900"
+                  class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
                   >Email</label
                 >
                 <div class="mt-2">
@@ -248,7 +252,7 @@
                     name="email"
                     autocomplete="email"
                     required
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -261,7 +265,9 @@
                 </button>
               </div>
             </form>
-            <p class="mt-10 text-sm text-center text-gray-500">
+            <p
+              class="mt-10 text-sm text-center text-gray-500 dark:text-slate-200 dark:bg-slate-900"
+            >
               <a
                 href="#"
                 @click.prevent="backToLogin"
@@ -303,15 +309,14 @@ export default {
       this.showResetPasswordForm = false;
     },
     backToLogin() {
-     this.showRegisterForm = false;
-    this.showResetPasswordForm = false;
-     this.showLoginForm =true;
-
+      this.showRegisterForm = false;
+      this.showResetPasswordForm = false;
+      this.showLoginForm = true;
     },
     toggleMotDePasse() {
       this.showRegisterForm = false;
       this.showResetPasswordForm = true;
-      this.showLoginForm = false
+      this.showLoginForm = false;
     },
 
     async login() {
