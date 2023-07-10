@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-blue-700 ">
+  <footer class="bg-blue-700">
     <div class="container px-6 py-10 mx-auto">
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
@@ -7,15 +7,10 @@
           <div class="flex flex-col mt-6">
             <NuxtLink to="/contact" class="text-white hover:underline">
               Contactez nous !
-            </NuxtLink> 
+            </NuxtLink>
             <NuxtLink to="/confidentialite" class="text-white hover:underline">
               Politique de confidentialité
             </NuxtLink>
-             <NuxtLink to="/quisommesnous" class="text-white hover:underline">
-             qui sommes nous ?
-             </NuxtLink>
-            
-            
           </div>
         </div>
         <div>

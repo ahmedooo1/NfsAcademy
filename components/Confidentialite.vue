@@ -1,8 +1,10 @@
 <template>
   <div
-    class="flex flex-col-reverse justify-center px-6 py-8 text-justify bg-gray-100 rounded-lg md:flex-row md:justify-between"
+    class="flex flex-col-reverse justify-center px-6 py-8 text-justify bg-gray-100 rounded-lg md:flex-row md:justify-between dark:text-slate-200 dark:bg-slate-900"
   >
-    <div class="mr-0 text-gray-900 md:mr-8 md:max-w-2xl">
+    <div
+      class="mr-0 text-gray-900 md:mr-8 md:max-w-2xl dark:text-slate-200 dark:bg-slate-900"
+    >
       <h2 class="mb-2 text-3xl font-bold">Politique de confidentialité</h2>
       <p class="mb-4">
         Votre confidentialité est importante pour nous. Nous collectons et

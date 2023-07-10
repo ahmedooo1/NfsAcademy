@@ -1,14 +1,18 @@
 <template>
   <div class="w-full max-w-md mx-auto mt-10">
-    <div class="bg-white shadow-2xl rounded-md p-4 mb-4">
-      <p class="text-gray-700 text-lg font-medium">
+    <div
+      class="bg-white shadow-2xl rounded-md p-4 mb-4 dark:text-slate-200 dark:bg-slate-900"
+    >
+      <p
+        class="text-gray-700 text-lg font-medium dark:text-slate-200 dark:bg-slate-900"
+      >
         Contactez-nous pour obtenir de l'aide ou des informations
         supplémentaires.
       </p>
     </div>
     <form
       @submit.prevent="submitForm"
-      class="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4"
+      class="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4 dark:text-slate-200 dark:bg-slate-900"
     >
       <div class="w-full flex flex-col justify-center items-center">
         <h1 class="font-bold">Contact</h1>
@@ -28,11 +32,14 @@
         </svg>
       </div>
       <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2 dark:text-slate-200 dark:bg-slate-900"
+          for="name"
+        >
           Nom
         </label>
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-full py-2 px-3 dark:text-slate-200 dark:bg-slate-900 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="name"
           type="text"
           placeholder="Votre nom"
@@ -41,11 +48,14 @@
         />
       </div>
       <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2 dark:text-slate-200 dark:bg-slate-900"
+          for="email"
+        >
           Email
         </label>
         <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-full py-2 px-3 dark:text-slate-200 dark:bg-slate-900 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="email"
           type="email"
           placeholder="Votre email"
@@ -54,11 +64,14 @@
         />
       </div>
       <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2 dark:text-slate-200 dark:bg-slate-900"
+          for="message"
+        >
           Message
         </label>
         <textarea
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-full py-2 dark:text-slate-200 dark:bg-slate-900 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="message"
           placeholder="Votre message"
           v-model="message"

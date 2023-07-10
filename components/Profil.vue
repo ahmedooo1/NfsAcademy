@@ -61,7 +61,7 @@
     >
       <NuxtLink
         to="/create"
-        class="flex flex-col items-center justify-center p-3 font-bold border-2 border-dashed rounded-md shadow-lg hover:border-slate-400 bg-slate-100 text-l md:text-2xl md:w-3/4 md:m-auto"
+        class="dark:text-slate-200 dark:bg-slate-900 flex flex-col items-center justify-center p-3 font-bold border-2 border-dashed rounded-md shadow-lg hover:border-slate-400 bg-slate-100 text-l md:text-2xl md:w-3/4 md:m-auto"
       >
         <svg
           viewBox="0 0 64 64"
@@ -186,31 +186,43 @@
     <form
       @submit.prevent="updateUserProfile"
       v-if="user"
-      class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100"
+      class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
     >
-      <h1 class="mb-4 text-2xl font-bold text-center">Informations personnelles</h1>
+      <h1 class="mb-4 text-2xl font-bold text-center">
+        Informations personnelles
+      </h1>
 
       <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
+        <label
+          for="name"
+          class="block text-sm font-medium text-gray-700 dark:text-slate-200 dark:bg-slate-900"
+          >Nom</label
+        >
         <input
           type="text"
           id="name"
           v-model="updatedUser.name"
-          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          class="dark:text-slate-200 dark:bg-slate-900 block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
       <div class="mt-4">
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <label
+          for="email"
+          class="block text-sm font-medium text-gray-700 dark:text-slate-200 dark:bg-slate-900"
+          >Email</label
+        >
         <input
           type="email"
           id="email"
           v-model="updatedUser.email"
-          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          class="dark:text-slate-200 dark:bg-slate-900 block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
 
       <div class="mt-4">
-        <label for="newPassword" class="block text-sm font-medium text-gray-700"
+        <label
+          for="newPassword"
+          class="block text-sm font-medium text-gray-700 dark:text-slate-200 dark:bg-slate-900"
           >Nouveau mot de passe</label
         >
         <input
@@ -218,11 +230,13 @@
           type="password"
           id="newPassword"
           v-model="newPassword"
-          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          class="dark:text-slate-200 dark:bg-slate-900 block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
       <div class="mt-4">
-        <label for="newPassword" class="block text-sm font-medium text-gray-700"
+        <label
+          for="newPassword"
+          class="block text-sm font-medium text-gray-700 dark:text-slate-200 dark:bg-slate-900"
           >Confirmer le nouveau mot de passe</label
         >
         <input
@@ -231,10 +245,14 @@
           id="newPassword"
           v-model="newPasswordConfirm"
           placeholder="Confirmer le nouveau mot de passe"
-          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          class="dark:text-slate-200 dark:bg-slate-900 block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
-        <label class="text-gray-600">
-          <input type="checkbox" @change="togglePasswordVisibility" class="m-1 rounded" />
+        <label class="text-gray-600 dark:text-slate-200 dark:bg-slate-900">
+          <input
+            type="checkbox"
+            @change="togglePasswordVisibility"
+            class="m-1 rounded"
+          />
           Afficher le mot de passe
         </label>
       </div>
@@ -250,16 +268,18 @@
     <!-- Bloc réservé aux administrateurs -->
     <div
       v-if="user && isAdmin"
-      class="p-4 text-2xl text-center shadow-lg md:w-3/4 md:m-auto bg-slate-100"
+      class="p-4 text-2xl text-center shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
     >
-      <h1 class="mb-4 text-2xl font-bold text-center">Recherchez un utilisateur :</h1>
+      <h1 class="mb-4 text-2xl font-bold text-center">
+        Recherchez un utilisateur :
+      </h1>
       <!-- Barre de recherche -->
       <input
         type="text"
         v-model="searchQuery"
         @input="searchUsers"
         placeholder="Rechercher par nom ou e-mail"
-        class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm"
+        class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900"
       />
     </div>
     <!-- Le reste de la liste des utilisateurs et des boutons de gestion des rôles -->
@@ -267,13 +287,26 @@
     <!-- Liste des utilisateurs trouvés -->
     <div
       v-if="searchResults.length"
-      class="p-4 shadow-lg md:w-3/4 md:m-auto bg-slate-100"
+      class="p-4 shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
     >
-      <div v-for="user in searchResults" :key="user.id" class="mb-2">
-        <div class="font-medium">{{ user.name }}</div>
-        <div class="text-sm text-gray-600">{{ user.email }}</div>
-        <div class="text-sm text-gray-600">Role: {{ user.role }}</div>
-        <div v-if="isAdmin" class="flex items-center justify-between mt-2">
+      <div
+        v-for="user in searchResults"
+        :key="user.id"
+        class="mb-2 dark:text-slate-200 dark:bg-slate-900"
+      >
+        <div class="font-medium dark:text-slate-200 dark:bg-slate-900">
+          {{ user.name }}
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400 dark:bg-slate-900">
+          {{ user.email }}
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400 dark:bg-slate-900">
+          Role: {{ user.role }}
+        </div>
+        <div
+          v-if="isAdmin"
+          class="flex items-center justify-between mt-2 dark:text-slate-200 dark:bg-slate-900"
+        >
           <button
             v-if="user.role !== 'admin'"
             @click="updateRole(user, 'admin')"
@@ -446,7 +479,11 @@ export default {
       try {
         const authToken = localStorage.getItem("token"); // Récupère le jeton stocké
         const headers = { Authorization: `Bearer ${authToken}` }; // En-tête avec le jeton
-        await this.$axios.put(`api/v1/auth/${user._id}`, { role: newRole }, { headers });
+        await this.$axios.put(
+          `api/v1/auth/${user._id}`,
+          { role: newRole },
+          { headers }
+        );
         user.role = newRole;
         this.$toast.success("Rôle d’utilisateur mis à jour avec succès");
       } catch (err) {
@@ -455,7 +492,9 @@ export default {
         //   this.$router.push('/login'); // Redirige vers la page de connexion
         // } else {
         //   console.error(err);
-        this.$toast.error("Erreur lors de la mise à jour du rôle d’utilisateur");
+        this.$toast.error(
+          "Erreur lors de la mise à jour du rôle d’utilisateur"
+        );
         // }
       }
     },

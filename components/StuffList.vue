@@ -1,28 +1,42 @@
 <template>
   <div>
     <!-- Barre de recherche -->
-<div class="w-full  sm:h-[114px] h-[214px]  bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center">
-  <label for="search" class="hidden">Recherche</label>
-  <div class="relative z-0 flex w-3/4 mx-auto sm:w-full md:w-1/2">
-    <input type="text"
-           id="search"
-           v-model="searchTerm"
-           placeholder="Rechercher par titre..."
-           class="w-full px-4 py-2 text-lg text-gray-700 bg-white border border-gray-500 rounded-full focus:outline-none focus:border-blue-500"
-           @input="searchGuides()">
-    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-</svg>
-
+    <div
+      class="w-full sm:h-[114px] h-[214px] bg-blue-700 rounded-bl-[178.50px] rounded-br-[178.50px] flex flex-col justify-center items-center"
+    >
+      <label for="search" class="hidden">Recherche</label>
+      <div class="relative z-0 flex w-3/4 mx-auto sm:w-full md:w-1/2">
+        <input
+          type="text"
+          id="search"
+          v-model="searchTerm"
+          placeholder="Rechercher par titre..."
+          class="w-full px-4 py-2 text-lg text-gray-700 bg-white border border-gray-500 rounded-full focus:outline-none focus:border-blue-500"
+          @input="searchGuides()"
+        />
+        <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- Filtres -->
-    <div class="grid grid-cols-1 gap-4 m-20 md:grid-cols-2 lg:grid-cols-3 ">
+    <div class="grid grid-cols-1 gap-4 m-20 md:grid-cols-2 lg:grid-cols-3">
       <div class="flex flex-row items-center justify-center m-4">
-        <label for="category" class="block">
+        <label for="category" class="block dark:text-slate-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -42,7 +56,7 @@
           id="category"
           v-model="selectedCategory"
           @change="filterStuffList"
-          class="border-none rounded"
+          class="border-none rounded dark:text-slate-200 dark:bg-slate-900"
         >
           <option value="">Toutes les catégories</option>
           <option
@@ -58,7 +72,7 @@
         class="flex flex-row items-center justify-center m-4"
         v-if="selectedCategory"
       >
-        <label for="subcategory" class="block">
+        <label for="subcategory" class="block dark:text-slate-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -77,7 +91,7 @@
           id="subcategory"
           v-model="selectedSubcategory"
           @change="filterStuffList"
-          class="border-none rounded"
+          class="border-none rounded dark:text-slate-200 dark:bg-slate-900"
         >
           <option value="">Toutes les sous-catégories</option>
           <option
@@ -91,33 +105,34 @@
       </div>
     </div>
 
-   <!-- Liste des éléments filtrés -->
-<div class="grid justify-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-  <div
-    v-for="stuff in paginatedStuffList"
-    :key="stuff._id"
-    v-if="stuff.title.toLowerCase().includes(searchTerm.toLowerCase())"
-    class="w-full max-w-xs mx-auto overflow-hidden rounded-lg shadow-lg bg-slate-100 dark:bg-gray-800"
-  >
-    <nuxt-link :to="`/guides/${stuff._id}`">
-      <img
-        :src="stuff.imageUrl"
-        alt="Stuff image"
-        class="object-cover w-full h-56"
-      />
-      <div class="py-5 text-center">
-       <a
-  href="#"
-  class="block text-xl font-bold text-gray-800 dark:text-white"
-  tabindex="0"
-  role="link"
-  v-html="highlightSearchTerm(stuff.title)"
-></a>
+    <!-- Liste des éléments filtrés -->
+    <div
+      class="grid justify-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <div
+        v-for="stuff in paginatedStuffList"
+        :key="stuff._id"
+        v-if="stuff.title.toLowerCase().includes(searchTerm.toLowerCase())"
+        class="w-full max-w-xs mx-auto overflow-hidden rounded-lg shadow-lg bg-slate-100 dark:bg-gray-800"
+      >
+        <nuxt-link :to="`/guides/${stuff._id}`">
+          <img
+            :src="stuff.imageUrl"
+            alt="Stuff image"
+            class="object-cover w-full h-56"
+          />
+          <div class="py-5 text-center">
+            <a
+              href="#"
+              class="block text-xl font-bold text-gray-800 dark:text-white"
+              tabindex="0"
+              role="link"
+              v-html="highlightSearchTerm(stuff.title)"
+            ></a>
+          </div>
+        </nuxt-link>
       </div>
-    </nuxt-link>
-  </div>
-</div>
-
+    </div>
 
     <!-- Pagination -->
     <div class="relative flex items-center justify-center m-2">
@@ -126,14 +141,17 @@
           @click.prevent="currentPage > 1 && changePage(currentPage - 1)"
           :class="{
             'cursor-not-allowed text-gray-100 bg-slate-300': currentPage === 1,
-            'hover:text-white hover:bg-blue-600 cursor-pointer': currentPage !== 1,
+            'hover:text-white hover:bg-blue-600 cursor-pointer':
+              currentPage !== 1,
           }"
-          class="flex items-center px-4 py-2 mx-1 text-gray-700 bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 "
+          class="flex items-center px-4 py-2 mx-1 text-gray-700 bg-white rounded-md dark:bg-gray-800 dark:text-gray-200"
         >
-          < Retour
+          &lt; Retour
         </a>
-  
-        <template v-for="page in Math.ceil(filteredStuffList.length / itemsPerPage)">
+
+        <template
+          v-for="page in Math.ceil(filteredStuffList.length / itemsPerPage)"
+        >
           <a
             @click.prevent="changePage(page)"
             :class="{
@@ -147,14 +165,21 @@
             {{ page }}
           </a>
         </template>
-  
+
         <a
-          @click.prevent="currentPage < Math.ceil(filteredStuffList.length / itemsPerPage) && changePage(currentPage + 1)"
+          @click.prevent="
+            currentPage < Math.ceil(filteredStuffList.length / itemsPerPage) &&
+              changePage(currentPage + 1)
+          "
           :class="{
-            'cursor-not-allowed text-gray-100 bg-slate-300': currentPage === Math.ceil(filteredStuffList.length / itemsPerPage),
-            'hover:text-white cursor-pointer hover:bg-blue-600 ': currentPage !== Math.ceil(filteredStuffList.length / itemsPerPage),
+            'cursor-not-allowed text-gray-100 bg-slate-300':
+              currentPage ===
+              Math.ceil(filteredStuffList.length / itemsPerPage),
+            'hover:text-white cursor-pointer hover:bg-blue-600 ':
+              currentPage !==
+              Math.ceil(filteredStuffList.length / itemsPerPage),
           }"
-          class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 "
+          class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200"
         >
           Suivant >
         </a>
@@ -211,10 +236,10 @@ export default {
     }
   },
   methods: {
-      highlightSearchTerm(title) {
-    const regex = new RegExp(this.searchTerm, "gi");
-    return title.replace(regex, "<span class='text-green-500'>$&</span>");
-  },
+    highlightSearchTerm(title) {
+      const regex = new RegExp(this.searchTerm, "gi");
+      return title.replace(regex, "<span class='text-green-500'>$&</span>");
+    },
     searchGuides() {
       this.filterStuffList();
       this.currentPage = 1;
@@ -232,7 +257,9 @@ export default {
         const subcategoryMatch =
           !this.selectedSubcategory ||
           (stuff.category && stuff.category._id === this.selectedSubcategory);
-        const searchTermMatch = stuff.title.toLowerCase().includes(this.searchTerm.toLowerCase());
+        const searchTermMatch = stuff.title
+          .toLowerCase()
+          .includes(this.searchTerm.toLowerCase());
 
         return categoryMatch && subcategoryMatch && searchTermMatch;
       });
