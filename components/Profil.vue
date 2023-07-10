@@ -310,27 +310,27 @@
           <button
             v-if="user.role !== 'admin'"
             @click="updateRole(user, 'admin')"
-            class="px-2 py-1 text-white bg-blue-500 rounded"
+            class="px-2 py-1 text-white bg-blue-500 rounded-full"
           >
             Mettre en Admin
           </button>
           <button
             v-if="user.role !== 'redacteur'"
             @click="updateRole(user, 'redacteur')"
-            class="px-2 py-1 text-white bg-green-500 rounded"
+            class="px-2 py-1 text-white bg-green-500 rounded-full"
           >
             Mettre en Redacteur
           </button>
           <button
             v-if="user.role !== 'user'"
             @click="updateRole(user, 'user')"
-            class="px-2 py-1 text-white bg-gray-500 rounded"
+            class="px-2 py-1 text-white bg-gray-500 rounded-full"
           >
             Mettre en utilisateur
           </button>
           <button
             @click="deleteUser(user)"
-            class="px-2 py-1 text-white bg-red-500 rounded"
+            class="px-2 py-1 text-white bg-red-500 rounded-full"
           >
             Supprimer
           </button>
