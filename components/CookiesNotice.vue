@@ -5,7 +5,7 @@
     ref="fixedEl"
   >
     <div
-      class="dark:text-slate-200 dark:bg-slate-900 fixed w-full max-w-md p-4 space-y-2 bg-white border-2 border-gray-300 rounded-lg shadow-lg left-4 bottom-4 sm:w-1/2"
+      class="fixed w-full max-w-md p-4 space-y-2 bg-white border-2 border-gray-300 rounded-lg shadow-lg dark:text-slate-200 dark:bg-slate-900 left-4 bottom-4 sm:w-1/2"
     >
       <p class="text-base font-medium">
         NFS Academy utilise des cookies pour améliorer votre expérience

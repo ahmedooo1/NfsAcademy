@@ -56,7 +56,7 @@ export default {
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://nodeapi.hop.sh/'
+    baseURL: 'https://nfs-academy-api.hop.sh/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
