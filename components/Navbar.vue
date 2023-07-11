@@ -2,11 +2,10 @@
   <div>
     <nav class="relative w-full py-2 mx-auto bg-blue-700 lg:px-6 md:flex md:justify-between md:items-center">
       <div class="container px-6 py-6 mx-auto md:flex md:justify-between md:items-center">
-        <div class="flex flex-wrap items-center justify-between w-full ">
-          <div>
+        <div class="flex items-center justify-between w-full lg:flex-wrap ">
             <button
               @click="toggleDropdown"
-              class="flex text-white lg:hidden focus:outline-none"
+              class="flex w-full text-white lg:hidden focus:outline-none"
             >
               <svg
                 class="w-6 h-6 fill-current hover:text-gray-300"
@@ -31,14 +30,22 @@
                 />
               </svg>
             </button>
-            <NuxtLink to="/" class="hidden text-white lg:flex">
+              <!-- <NuxtLink to="/" class="float-right mb-3 text-white lg:hidden">
+              <img
+                src="../assets/images/logoWhite.png"
+                alt="Logo"
+                class="w-28"
+              />
+          
+            </NuxtLink> -->
+            <NuxtLink to="/" class="block float-right text-white lg:flex">
               <img
                 src="../assets/images/logoWhite.png"
                 alt="Logo"
                 class="w-28"
               />
               <div
-                class="flex items-center px-4 py-2 mx-8 text-white rounded-full fill-current hover:bg-white hover:text-gray-800"
+                class="items-center hidden px-4 py-2 mx-8 text-white rounded-full fill-current lg:flex hover:bg-white hover:text-gray-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +85,6 @@
                 Home
               </div>
             </NuxtLink>
-          </div>
 
           <div
             v-show="isOpen"
