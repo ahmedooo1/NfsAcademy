@@ -134,7 +134,7 @@
           <img
             src="../assets/images/boy-studying-onlinepng.png"
             alt="studyonline"
-            class="hidden object-contain h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 sm:block"
+            class="object-contain  h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 sm:block"
           />
         </div>
       </div>
