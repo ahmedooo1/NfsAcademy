@@ -181,94 +181,82 @@
         </svg>
         Ajouter un guide</NuxtLink
       >
-<!-- Formulaire d'ajout de catégories -->
+      <!-- Formulaire d'ajout de catégories -->
+       <form @submit.prevent="addSubCategory" v-if="user" class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900" > <h1 class="mb-4 text-2xl font-bold text-center"> Ajouter une sous-catégorie </h1>
+
+    <div>
+    <div>
+<label for="parentCategory">Catégorie parente</label>
+<select id="parentCategory" v-model="newSubCategory.parentCategory">
+
+<option value="">Sélectionnez une catégorie parente</option> <option v-for="category in categories" :key="category._id" :value="category._id"> {{ category.name }} </option> <option value="new">Ajouter une nouvelle catégorie</option> </select> </div> <div> <label for="category">Sous-catégorie</label> <input type="text" id="category" v-model="newSubCategory.name" /> </div> </div>
+
+    <button
+      type="submit"
+      class="px-4 py-2 m-auto mt-4 text-white bg-blue-700 rounded-full"
+    >
+      Ajouter une sous-catégorie
+    </button>
+  </form>
+      <!-- Formulaire de suppression de catégories -->
       <form
-        @submit.prevent="addSubCategory"
+        @submit.prevent="deleteCategory"
         v-if="isAdmin"
         class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
       >
-        <h1 class="mb-4 text-2xl font-bold text-center">
-          Ajouter une sous-catégorie
-        </h1>
+        <h1 class="mb-4 text-2xl font-bold text-center">Supprimer une catégorie</h1>
 
         <div>
-        <div>
-  <label for="parentCategory">Catégorie parente</label>
- <select id="parentCategory" v-model="newSubCategory.parentCategory"           class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
->
-  <option value="">Sélectionnez une catégorie parente</option>
-  <option v-for="category in categories" :key="category._id" :value="category._id">
-    {{ category.name }}
-  </option>
-  <option value="new">Ajouter une nouvelle catégorie</option>
-</select>
-</div>
-
-  <div>
-    <label for="category">Sous-catégorie</label>
-    <input type="text" id="category" v-model="newSubCategory.name"           class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-/>
-  </div>
+          <label for="categoryToDelete">Catégorie à supprimer</label>
+          <select
+            id="categoryToDelete"
+            v-model="categoryToDelete"
+            class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            <option value="">Sélectionnez une catégorie à supprimer</option>
+            <option
+              v-for="category in categories"
+              :key="category._id"
+              :value="category._id"
+            >
+              {{ category.name }}
+            </option>
+          </select>
         </div>
 
         <button
           type="submit"
-          class="px-4 py-2 m-auto mt-4 text-white bg-blue-700 rounded-full"
+          class="px-4 py-2 m-auto mt-4 text-white bg-red-700 rounded-full"
         >
-          Ajouter une sous-catégorie
+          Supprimer la catégorie
+        </button>
+
+        <!-- Sélection de la catégorie parente de suppression -->
+        <div v-if="categoryToDelete">
+          <label for="parentCategoryToDelete">Catégorie parente</label>
+          <select
+            id="parentCategoryToDelete"
+            v-model="parentCategoryToDelete"
+            class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            <option value="">Sélectionnez une catégorie parente</option>
+            <option
+              v-for="subcategory in subcategories"
+              :key="subcategory._id"
+              :value="subcategory._id"
+            >
+              {{ subcategory.name }}
+            </option>
+          </select>
+        </div>
+
+        <button
+          @click.prevent="deleteSubCategory"
+          class="px-4 py-2 m-auto mt-4 text-white bg-red-700 rounded-full"
+        >
+          Supprimer la sous-catégorie
         </button>
       </form>
-     <!-- Formulaire de suppression de catégories -->
-    <form
-      @submit.prevent="deleteCategory"
-      v-if="isAdmin"
-      class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
-    >
-      <h1 class="mb-4 text-2xl font-bold text-center">
-        Supprimer une catégorie
-      </h1>
-
-      <div>
-        <label for="categoryToDelete">Catégorie à supprimer</label>
-        <select id="categoryToDelete" v-model="categoryToDelete"          class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
->
-          <option value="">Sélectionnez une catégorie à supprimer</option>
-          <option v-for="category in categories" :key="category._id" :value="category._id">
-            {{ category.name }}
-          </option>
-        </select>
-      </div>
-
-      <button
-        type="submit"
-        class="px-4 py-2 m-auto mt-4 text-white bg-red-700 rounded-full"
-      >
-        Supprimer la catégorie
-      </button>
-
-      <!-- Sélection de la catégorie parente de suppression -->
-      <div v-if="categoryToDelete">
-        <label for="parentCategoryToDelete">Catégorie parente</label>
-        <select id="parentCategoryToDelete" v-model="parentCategoryToDelete"           class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
->
-          <option value="">Sélectionnez une catégorie parente</option>
-          <option v-for="subcategory in subcategories"
-            :key="subcategory._id"
-            :value="subcategory._id"
-          >
-            {{ subcategory.name }}
-          </option>
-        </select>
-      </div>
-
-      <button
-        @click.prevent="deleteSubCategory"
-        class="px-4 py-2 m-auto mt-4 text-white bg-red-700 rounded-full"
-      >
-        Supprimer la sous-catégorie
-      </button>
-    </form>
-
     </div>
     <!-- Formulaire de mise à jour du profil -->
     <form
@@ -276,9 +264,7 @@
       v-if="user"
       class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
     >
-      <h1 class="mb-4 text-2xl font-bold text-center">
-        Informations personnelles
-      </h1>
+      <h1 class="mb-4 text-2xl font-bold text-center">Informations personnelles</h1>
 
       <div>
         <label
@@ -336,11 +322,7 @@
           class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
         <label class="text-gray-600 dark:text-slate-200 dark:bg-slate-900">
-          <input
-            type="checkbox"
-            @change="togglePasswordVisibility"
-            class="m-1 rounded"
-          />
+          <input type="checkbox" @change="togglePasswordVisibility" class="m-1 rounded" />
           Afficher le mot de passe
         </label>
       </div>
@@ -358,9 +340,7 @@
       v-if="user && isAdmin"
       class="p-4 text-2xl text-center shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
     >
-      <h1 class="mb-4 text-2xl font-bold text-center">
-        Recherchez un utilisateur :
-      </h1>
+      <h1 class="mb-4 text-2xl font-bold text-center">Recherchez un utilisateur :</h1>
       <!-- Barre de recherche -->
       <input
         type="text"
@@ -441,23 +421,22 @@ export default {
         name: "",
         email: "",
       },
-         categories: [],
+      categories: [],
       newSubCategory: {
         parentCategory: "",
         category: "",
       },
       categoryToDelete: "",
-parentCategoryToDelete:"",
+      parentCategoryToDelete: "",
       newPassword: "",
       newPasswordConfirm: "",
       isAdmin: false,
       passwordVisible: false,
       passwordInputType: "password",
-
     };
   },
   computed: {
-        subcategories() {
+    subcategories() {
       if (!this.categoryToDelete) return [];
       const category = this.categories.find(
         (category) => category._id === this.categoryToDelete
@@ -496,69 +475,73 @@ parentCategoryToDelete:"",
     },
     immediate: true,
   },
-async created() {
-  try {
-    const { data } = await this.$axios.get("api/v1/categories");
-    this.categories = data.data;
-    // ...
-  } catch (error) {
-    console.error(error);
-  }
-},
-  methods: {
-  async addSubCategory() {
-  try {
-    if (this.newSubCategory.parentCategory === 'new') {
-      // Si l'utilisateur a sélectionné "Ajouter une nouvelle catégorie", créez une nouvelle catégorie parente
-      const { data } = await this.$axios.post('/api/v1/categories', { name: this.newSubCategory.category });
-      // Utilisez l'ID de la nouvelle catégorie comme parentCategory
-      this.newSubCategory.parentCategory = data._id; // Mettez à jour avec l'ID de la nouvelle catégorie
-      this.newSubCategory.name = ''; // Réinitialisez le champ de la catégorie
-              this.$toast.success(" ajouté avec succès !");
-
-    } else {
-      // Sinon, continuez comme d'habitude
-      await this.$axios.post('/api/v1/categories', this.newSubCategory);
-      this.newSubCategory = { parentCategory: "", category: "" };
-                    this.$toast.success(" ajouté avec succès !");
-
+  async created() {
+    try {
+      const { data } = await this.$axios.get("api/v1/categories");
+      this.categories = data.data;
+      // ...
+    } catch (error) {
+      console.error(error);
     }
-  } catch (error) {
-    console.error("Une erreur est survenue lors de l'ajout de la sous-catégorie", error);
-  }
-},
-async deleteCategory() {
-  if (this.categoryToDelete) {
-    // Envoyer la requête DELETE pour supprimer la catégorie
-    await this.$axios.delete(`/api/v1/categories/${this.categoryToDelete}`)
-      .then(response => {
-        // Catégorie supprimée avec succès
-        this.categoryToDelete = ""; // Réinitialiser la catégorie sélectionnée
-        this.$toast.success("Catégorie supprimée avec succès !");
-      })
-      .catch(error => {
-        // Gérer les erreurs lors de la suppression de la catégorie
-        console.error("Erreur lors de la suppression de la catégorie :", error);
-        this.$toast.error("Erreur lors de la suppression de la catégorie");
-      });
-  }
-},
-async deleteSubCategory() {
- if (this.parentCategoryToDelete) {
-    // Envoyer la requête DELETE pour supprimer la catégorie
-    await this.$axios.delete(`/api/v1/categories/${this.parentCategoryToDelete}`)
-      .then(response => {
-        // Catégorie supprimée avec succès
-        this.parentCategoryToDelete = ""; // Réinitialiser la catégorie sélectionnée
-        this.$toast.success("sous-catégorie supprimée avec succès !");
-      })
-      .catch(error => {
-        // Gérer les erreurs lors de la suppression de la catégorie
-        console.error("Erreur lors de la suppression de la catégorie :", error);
-        this.$toast.error("Erreur lors de la suppression de la catégorie");
-      });
-  }
-},
+  },
+  methods: {
+    async addSubCategory() {
+      try {
+        if (this.newSubCategory.parentCategory === "new") {
+          // Si l'utilisateur a sélectionné "Ajouter une nouvelle catégorie", créez une nouvelle catégorie parente
+          const { data } = await this.$axios.post("/api/v1/categories", {
+            name: this.newSubCategory.category,
+          }); // Utilisez l'ID de la nouvelle catégorie comme parentCategory
+          this.newSubCategory.parentCategory = data._id; // Mettez à jour avec l'ID de la nouvelle catégorie
+          this.newSubCategory.name = ""; // Réinitialisez le champ de la catégorie
+          this.$toast.success(" ajouté avec succès !");
+        } else {
+          // Sinon, continuez comme d'habitude
+          await this.$axios.post("/api/v1/categories", this.newSubCategory);
+          this.newSubCategory = { parentCategory: "", category: "" };
+          this.$toast.success(" ajouté avec succès !");
+        }
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de l'ajout de la sous-catégorie",
+          error
+        );
+      }
+    },
+    async deleteCategory() {
+      if (this.categoryToDelete) {
+        // Envoyer la requête DELETE pour supprimer la catégorie
+        await this.$axios
+          .delete(`/api/v1/categories/${this.categoryToDelete}`)
+          .then((response) => {
+            // Catégorie supprimée avec succès
+            this.categoryToDelete = ""; // Réinitialiser la catégorie sélectionnée
+            this.$toast.success("Catégorie supprimée avec succès !");
+          })
+          .catch((error) => {
+            // Gérer les erreurs lors de la suppression de la catégorie
+            console.error("Erreur lors de la suppression de la catégorie :", error);
+            this.$toast.error("Erreur lors de la suppression de la catégorie");
+          });
+      }
+    },
+    async deleteSubCategory() {
+      if (this.parentCategoryToDelete) {
+        // Envoyer la requête DELETE pour supprimer la catégorie
+        await this.$axios
+          .delete(`/api/v1/categories/${this.parentCategoryToDelete}`)
+          .then((response) => {
+            // Catégorie supprimée avec succès
+            this.parentCategoryToDelete = ""; // Réinitialiser la catégorie sélectionnée
+            this.$toast.success("sous-catégorie supprimée avec succès !");
+          })
+          .catch((error) => {
+            // Gérer les erreurs lors de la suppression de la catégorie
+            console.error("Erreur lors de la suppression de la catégorie :", error);
+            this.$toast.error("Erreur lors de la suppression de la catégorie");
+          });
+      }
+    },
     togglePasswordVisibility() {
       this.passwordVisible = !this.passwordVisible;
       this.passwordInputType = this.passwordVisible ? "text" : "password";
@@ -642,11 +625,7 @@ async deleteSubCategory() {
       try {
         const authToken = localStorage.getItem("token"); // Récupère le jeton stocké
         const headers = { Authorization: `Bearer ${authToken}` }; // En-tête avec le jeton
-        await this.$axios.put(
-          `api/v1/auth/${user._id}`,
-          { role: newRole },
-          { headers }
-        );
+        await this.$axios.put(`api/v1/auth/${user._id}`, { role: newRole }, { headers });
         user.role = newRole;
         this.$toast.success("Rôle d’utilisateur mis à jour avec succès");
       } catch (err) {
@@ -655,9 +634,7 @@ async deleteSubCategory() {
         //   this.$router.push('/login'); // Redirige vers la page de connexion
         // } else {
         //   console.error(err);
-        this.$toast.error(
-          "Erreur lors de la mise à jour du rôle d’utilisateur"
-        );
+        this.$toast.error("Erreur lors de la mise à jour du rôle d’utilisateur");
         // }
       }
     },
