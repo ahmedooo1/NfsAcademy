@@ -192,7 +192,11 @@
         <div>
           <div>
             <label for="parentCategory">Catégorie parente</label>
-            <select id="parentCategory" v-model="newSubCategory.parentCategory">
+            <select
+              id="parentCategory"
+              v-model="newSubCategory.parentCategory"
+              class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            >
               <option value="">Sélectionnez une catégorie parente</option>
               <option
                 v-for="category in categories"
@@ -206,7 +210,12 @@
           </div>
           <div>
             <label for="category">Sous-catégorie</label>
-            <input type="text" id="category" v-model="newSubCategory.name" />
+            <input
+              type="text"
+              id="category"
+              v-model="newSubCategory.name"
+              class="block w-full px-3 py-2 mt-1 text-base bg-white border border-gray-300 rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            />
           </div>
         </div>
 
