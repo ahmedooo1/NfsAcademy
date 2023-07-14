@@ -182,22 +182,41 @@
         Ajouter un guide</NuxtLink
       >
       <!-- Formulaire d'ajout de catégories -->
-       <form @submit.prevent="addSubCategory" v-if="user" class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900" > <h1 class="mb-4 text-2xl font-bold text-center"> Ajouter une sous-catégorie </h1>
+      <form
+        @submit.prevent="addSubCategory"
+        v-if="user"
+        class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
+      >
+        <h1 class="mb-4 text-2xl font-bold text-center">Ajouter une sous-catégorie</h1>
 
-    <div>
-    <div>
-<label for="parentCategory">Catégorie parente</label>
-<select id="parentCategory" v-model="newSubCategory.parentCategory">
+        <div>
+          <div>
+            <label for="parentCategory">Catégorie parente</label>
+            <select id="parentCategory" v-model="newSubCategory.parentCategory">
+              <option value="">Sélectionnez une catégorie parente</option>
+              <option
+                v-for="category in categories"
+                :key="category._id"
+                :value="category._id"
+              >
+                {{ category.name }}
+              </option>
+              <option value="new">Ajouter une nouvelle catégorie</option>
+            </select>
+          </div>
+          <div>
+            <label for="category">Sous-catégorie</label>
+            <input type="text" id="category" v-model="newSubCategory.name" />
+          </div>
+        </div>
 
-<option value="">Sélectionnez une catégorie parente</option> <option v-for="category in categories" :key="category._id" :value="category._id"> {{ category.name }} </option> <option value="new">Ajouter une nouvelle catégorie</option> </select> </div> <div> <label for="category">Sous-catégorie</label> <input type="text" id="category" v-model="newSubCategory.name" /> </div> </div>
-
-    <button
-      type="submit"
-      class="px-4 py-2 m-auto mt-4 text-white bg-blue-700 rounded-full"
-    >
-      Ajouter une sous-catégorie
-    </button>
-  </form>
+        <button
+          type="submit"
+          class="px-4 py-2 m-auto mt-4 text-white bg-blue-700 rounded-full"
+        >
+          Ajouter une sous-catégorie
+        </button>
+      </form>
       <!-- Formulaire de suppression de catégories -->
       <form
         @submit.prevent="deleteCategory"
@@ -248,14 +267,14 @@
               {{ subcategory.name }}
             </option>
           </select>
-        </div>
 
-        <button
-          @click.prevent="deleteSubCategory"
-          class="px-4 py-2 m-auto mt-4 text-white bg-red-700 rounded-full"
-        >
-          Supprimer la sous-catégorie
-        </button>
+          <button
+            @click.prevent="deleteSubCategory"
+            class="px-4 py-2 m-auto mt-4 text-white bg-red-700 rounded-full"
+          >
+            Supprimer la sous-catégorie
+          </button>
+        </div>
       </form>
     </div>
     <!-- Formulaire de mise à jour du profil -->
