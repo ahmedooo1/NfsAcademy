@@ -15,9 +15,7 @@
         @click="closeModal"
       ></div>
 
-      <span
-        class="hidden sm:inline-block sm:align-middle sm:h-screen"
-        aria-hidden="true"
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true"
         >&#8203;</span
       >
 
@@ -202,6 +200,26 @@
                   class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
+              <div>
+                <label
+                  for="passwordConfirmation"
+                  class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
+                >
+                  Confirmation du mot de passe
+                </label>
+                <div class="mt-2">
+                  <input
+                    id="passwordConfirmation"
+                    v-model="passwordConfirmation"
+                    name="passwordConfirmation"
+                    type="password"
+                    autocomplete="new-password"
+                    required
+                    class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+                <div class="text-red-500">{{ passwordError }}</div>
+              </div>
             </div>
 
             <div>
@@ -289,6 +307,8 @@ export default {
       name: "",
       email: "",
       password: "",
+      passwordConfirmation: "",
+      passwordError: "",
       showRegisterForm: false,
       showResetPasswordForm: false,
     };
@@ -347,6 +367,20 @@ export default {
       }
     },
     async register() {
+      // Vérification de la correspondance des mots de passe
+      if (this.password !== this.passwordConfirmation) {
+        this.passwordError = "Les mots de passe ne correspondent pas";
+        return;
+      }
+
+      // Vérifications supplémentaires du mot de passe
+      const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,}$/;
+      if (!passwordRegex.test(this.password)) {
+        this.passwordError =
+          "Le mot de passe doit contenir au moins 6 caractères, une lettre majuscule, une lettre minuscule et un symbole";
+        return;
+      }
+
       try {
         const { data } = await this.$axios.post("api/v1/auth/signup", {
           name: this.name,
@@ -369,9 +403,7 @@ export default {
           email: this.email,
         });
         // Afficher un message de succès si l'API renvoie une réponse positive
-        this.$toast.success(
-          "Un email de réinitialisation du mot de passe a été envoyé."
-        );
+        this.$toast.success("Un email de réinitialisation du mot de passe a été envoyé.");
       } catch (error) {
         // Gérer les erreurs éventuelles
         this.$toast.error(
