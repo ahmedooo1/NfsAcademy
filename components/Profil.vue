@@ -61,7 +61,7 @@
     >
       <NuxtLink
         to="/create"
-        class="flex flex-col items-center justify-center p-3 font-bold border-2 border-dashed rounded-md shadow-lg dark:text-slate-200 dark:bg-slate-900 hover:border-slate-400 bg-slate-100 text-l md:text-2xl md:w-3/4 md:m-auto"
+        class="flex flex-col items-center justify-center p-3 font-bold border-2 border-dashed rounded-md shadow-lg dark:text-slate-200 dark:bg-slate-900 hover:border-slate-400 bg-slate-100 text-l md:text-2xl w-3/4 md:m-auto"
       >
         <svg
           viewBox="0 0 64 64"
@@ -185,7 +185,7 @@
       <form
         @submit.prevent="addSubCategory"
         v-if="isAdmin"
-        class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
+        class="p-4 my-5 rounded-md shadow-lg w-full md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
       >
         <h1 class="mb-4 text-2xl font-bold text-center">Ajouter une sous-catégorie</h1>
 
@@ -230,7 +230,7 @@
       <form
         @submit.prevent="deleteCategory"
         v-if="isAdmin"
-        class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
+        class="p-4 my-5 rounded-md shadow-lg w-full md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
       >
         <h1 class="mb-4 text-2xl font-bold text-center">Supprimer une catégorie</h1>
 

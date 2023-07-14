@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-4 mx-auto my-4 font-sans bg-white rounded-lg shadow-md md:w-1/2 dark:text-slate-200 dark:bg-slate-900"
+    class="p-4 mx-auto my-4 font-sans bg-white rounded-lg md:w-1/2 dark:text-slate-200 dark:bg-slate-900"
   >
     <header class="py-4 bg-white dark:text-white dark:bg-slate-900">
       <div class="container px-4 mx-auto text-center">
@@ -10,21 +10,15 @@
           Utilisateurs & Guides
         </h1>
         <p class="text-lg text-gray-600 dark:text-slate-200 dark:bg-slate-900">
-          Ce graphique montre la répartition des utilisateurs et des guides,
-          ainsi que la répartition des utilisateurs par rôle.
+          Ce graphique montre la répartition des utilisateurs et des guides, ainsi que la
+          répartition des utilisateurs par rôle.
         </p>
       </div>
     </header>
     <div class="w-full dark:text-slate-200 dark:bg-slate-900">
-      <apexchart
-        type="donut"
-        :options="chartOptions"
-        :series="chartData"
-      ></apexchart>
+      <apexchart type="donut" :options="chartOptions" :series="chartData"></apexchart>
     </div>
-    <div
-      class="p-4 mt-4 bg-gray-100 rounded-lg dark:text-slate-200 dark:bg-slate-900"
-    >
+    <div class="p-4 mt-4 bg-gray-100 rounded-lg dark:text-slate-200 dark:bg-slate-900">
       <ul
         class="text-lg text-gray-600 list-disc list-inside dark:text-slate-200 dark:bg-slate-900"
       >
