@@ -184,7 +184,7 @@
       <!-- Formulaire d'ajout de catégories -->
       <form
         @submit.prevent="addSubCategory"
-        v-if="user"
+        v-if="isAdmin"
         class="p-4 my-5 rounded-md shadow-lg md:w-3/4 md:m-auto bg-slate-100 dark:text-slate-200 dark:bg-slate-900"
       >
         <h1 class="mb-4 text-2xl font-bold text-center">Ajouter une sous-catégorie</h1>
