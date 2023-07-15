@@ -1,13 +1,16 @@
 <template>
+  <div>
+    <Navbar />
     <div class="container mx-auto my-10">
       <h1 class="mb-5 text-4xl font-bold">Modifier l'article</h1>
-      <form @submit.prevent="updateGuide" class="w-full max-w-lg">
+      <form
+        @submit.prevent="updateGuide"
+        class="flex flex-col items-center justify-center w-5/6 p-6 m-auto mt-10 bg-white rounded-lg shadow md:w-3/4 sm:w-11/12 dark:text-slate-200 dark:bg-slate-900"
+      >
         <div class="mb-4">
-          <label class="block mb-2 text-sm font-bold text-gray-700" for="title">
-            Titre
-          </label>
+          <label class="block mb-2 text-sm font-bold" for="title"> Titre </label>
           <input
-            class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+            class="w-full px-3 py-2 dark:text-black leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             id="title"
             type="text"
             placeholder="Titre de l'article"
@@ -15,11 +18,10 @@
           />
         </div>
         <div class="mb-4">
-          <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+          <label class="block mb-2 text-sm font-bold" for="description">
             Description
           </label>
-        <IDEText id="description"  :guide="guide"  v-model="guide.description" class="" />
-
+          <IDEText id="description" :guide="guide" v-model="guide.description" class="" />
         </div>
         <div class="flex items-center justify-between">
           <button
@@ -31,29 +33,31 @@
         </div>
       </form>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    async asyncData({ params, $axios }) {
-      const { id } = params;
-      const { data } = await $axios.get(`/api/v1/guides/${id}`);
-      return { guide: data };
-    },
-    methods: {
-      async updateGuide() {
-        try {
-          await this.$axios.put(`/api/v1/guides/${this.guide._id}`, {
-            title: this.guide.title,
-            description: this.guide.description,
-          });
-          this.$toast.success("Mise à jour avec succès !");
+    <Footer />
+  </div>
+</template>
 
-          this.$router.push(`/guides/${this.guide._id}`);
-        } catch (error) {
-          console.error('Error updating guide:', error);
-        }
-      },
+<script>
+export default {
+  async asyncData({ params, $axios }) {
+    const { id } = params;
+    const { data } = await $axios.get(`/api/v1/guides/${id}`);
+    return { guide: data };
+  },
+  methods: {
+    async updateGuide() {
+      try {
+        await this.$axios.put(`/api/v1/guides/${this.guide._id}`, {
+          title: this.guide.title,
+          description: this.guide.description,
+        });
+        this.$toast.success("Mise à jour avec succès !");
+
+        this.$router.push(`/guides/${this.guide._id}`);
+      } catch (error) {
+        console.error("Error updating guide:", error);
+      }
     },
-  };
-  </script>
+  },
+};
+</script>
