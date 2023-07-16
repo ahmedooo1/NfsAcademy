@@ -4,7 +4,7 @@
       class="relative w-full py-2 mx-auto bg-blue-700 lg:px-6 md:flex md:justify-between md:items-center"
     >
       <div class="container px-6 py-6 mx-auto md:flex md:justify-between md:items-center">
-        <div class="flex items-center justify-between w-full lg:flex-wrap">
+        <div class="flex items-center justify-between w-full">
           <button
             @click="toggleDropdown"
             class="flex w-full text-white lg:hidden focus:outline-none"
