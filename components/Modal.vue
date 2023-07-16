@@ -221,6 +221,20 @@
                 <div class="text-red-500">{{ passwordError }}</div>
               </div>
             </div>
+            <div class="mt-2">
+              <input
+                type="checkbox"
+                v-model="acceptTerms"
+                required
+                class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out dark:text-slate-200 dark:bg-slate-900"
+              />
+              <label
+                for="acceptTerms"
+                class="ml-2 text-sm text-gray-900 dark:text-blue-700 dark:bg-slate-900"
+              >
+                J'accepte les conditions générales d'utilisation
+              </label>
+            </div>
 
             <div>
               <button
