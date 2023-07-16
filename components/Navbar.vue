@@ -43,7 +43,7 @@
           <NuxtLink to="/" class="block float-right text-white lg:flex">
             <img src="../assets/images/logoWhite.png" alt="Logo" class="w-28" />
             <div
-              class="items-center hidden px-4 py-2 mx-8 text-white rounded-full fill-current lg:flex hover:bg-white hover:text-gray-800"
+              class="items-center hidden px-4 py-2 mx-4 text-white rounded-full fill-current lg:flex hover:bg-white hover:text-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
