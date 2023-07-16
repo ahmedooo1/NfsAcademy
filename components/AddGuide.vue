@@ -2,9 +2,7 @@
   <div>
     <Navbar />
     <div class="container py-6 mx-auto dark:text-slate-200">
-      <h1
-        class="mb-6 text-3xl font-extrabold text-gray-800 dark:text-slate-200"
-      >
+      <h1 class="mb-6 text-3xl font-extrabold text-gray-800 dark:text-slate-200">
         Ajouter un guide
       </h1>
       <form
@@ -25,11 +23,9 @@
               <select
                 id="parentCategory"
                 v-model="selectedParentCategory"
-                class="dark:text-slate-200 dark:bg-slate-700 block w-full px-4 py-3 pr-8 text-gray-700 bg-gray-100 border border-gray-300 rounded-md appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                class="block w-full px-4 py-3 pr-8 text-gray-700 bg-gray-100 border border-gray-300 rounded-md appearance-none dark:text-slate-200 dark:bg-slate-700 focus:outline-none focus:bg-white focus:border-gray-500"
               >
-                <option disabled value="">
-                  Choisissez une catégorie parente
-                </option>
+                <option disabled value="">Choisissez une catégorie parente</option>
                 <option
                   v-for="parentCategory in parentCategories"
                   :key="parentCategory._id"
@@ -68,7 +64,7 @@
               <select
                 id="category"
                 v-model="selectedCategory"
-                class="dark:text-slate-200 dark:bg-slate-700 block w-full px-4 py-3 pr-8 text-gray-700 bg-gray-100 border border-gray-300 rounded-md appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                class="block w-full px-4 py-3 pr-8 text-gray-700 bg-gray-100 border border-gray-300 rounded-md appearance-none dark:text-slate-200 dark:bg-slate-700 focus:outline-none focus:bg-white focus:border-gray-500"
               >
                 <option disabled value="">Choisissez une catégorie</option>
                 <option
@@ -103,7 +99,7 @@
           <div class="flex flex-col items-center space-y-4">
             <label
               for="dropzone-file"
-              class="dark:text-slate-200 dark:bg-slate-900 relative flex flex-col items-center justify-center w-full bg-gray-100 border-2 border-gray-300 border-dashed rounded-md cursor-pointer h-80 md:h-56 hover:bg-gray-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+              class="relative flex flex-col items-center justify-center w-full bg-gray-100 border-2 border-gray-300 border-dashed rounded-md cursor-pointer dark:text-slate-200 dark:bg-slate-900 h-80 md:h-56 hover:bg-gray-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
             >
               <div class="text-center">
                 <svg
@@ -165,7 +161,7 @@
             type="text"
             v-model="guide.title"
             required
-            class="dark:text-slate-200 dark:bg-slate-900 block w-full px-4 py-3 leading-tight bg-gray-100 border border-gray-300 rounded-md appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+            class="block w-full px-4 py-3 leading-tight bg-gray-100 border border-gray-300 rounded-md appearance-none dark:text-slate-200 dark:bg-slate-900 focus:outline-none focus:bg-white focus:border-gray-500"
           />
         </div>
         <div class="px-6 mb-6">
@@ -183,11 +179,24 @@
             class="block w-full px-4 py-3 leading-tight bg-gray-100 border border-gray-300 rounded-md appearance-none resize-none focus:outline-none focus:bg-white focus:border-gray-500"
           ></textarea> -->
 
-          <IDEText
+          <editor
             id="description"
             :guide="guide"
             v-model="guide.description"
-            class="border-b-2 border-blue-500 dark:text-slate-200 dark:bg-slate-900"
+            api-key="qy48pjg71k9urdmpfkn5nqx4v6jbwwt8ieju0y8vvlpvo3pz"
+            :init="{
+              height: 500,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help',
+            }"
           />
         </div>
         <div
@@ -206,12 +215,13 @@
 </template>
 
 <script>
+import Editor from "@tinymce/tinymce-vue";
+
 import Navbar from "~/components/Navbar.vue";
-import IDEText from "~/components/IDEText.vue";
 export default {
   components: {
     Navbar,
-    IDEText,
+    Editor,
   },
   data() {
     return {
@@ -281,6 +291,9 @@ export default {
         this.$toast.success("Votre guide a été ajouté avec succès !");
       } catch (err) {
         console.error(err);
+        this.$toast.error(
+          "Une erreur s'est produite lors de l'ajout du guide. Veuillez réessayer plus tard."
+        );
       }
     },
   },

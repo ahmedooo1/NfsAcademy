@@ -21,7 +21,26 @@
           <label class="block mb-2 text-sm font-bold" for="description">
             Description
           </label>
-          <IDEText id="description" :guide="guide" v-model="guide.description" class="" />
+
+          <editor
+            id="description"
+            :guide="guide"
+            v-model="guide.description"
+            api-key="qy48pjg71k9urdmpfkn5nqx4v6jbwwt8ieju0y8vvlpvo3pz"
+            :init="{
+              height: 500,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist outdent indent | removeformat | help',
+            }"
+          />
         </div>
         <div class="flex items-center justify-between">
           <button
@@ -38,7 +57,12 @@
 </template>
 
 <script>
+import Editor from "@tinymce/tinymce-vue";
+
 export default {
+  components: {
+    Editor,
+  },
   async asyncData({ params, $axios }) {
     const { id } = params;
     const { data } = await $axios.get(`/api/v1/guides/${id}`);

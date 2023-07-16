@@ -6,7 +6,7 @@ export default {
       lang: 'fr'
     },
     script: [
-   
+  
   ],
     meta: [
       { charset: 'utf-8' },
@@ -34,7 +34,7 @@ export default {
     '~/plugins/client-only-placeholder.js',
   { src: '~/plugins/toast.js', mode: 'client' },
   '~/plugins/axios.js',
-  { src: '~/plugins/vue-apexcharts.js', mode: 'client' }
+  { src: '~/plugins/vue-apexcharts.js', mode: 'client' },
 
   
   ],
