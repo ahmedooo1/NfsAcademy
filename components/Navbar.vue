@@ -145,10 +145,10 @@
             </button>
           </div>
 
-          <div class="flex items-center justify-between md:ml-6 bg-b">
+          <div class="flex items-center justify-between md:ml-6">
             <NuxtLink
               to="/guidesList"
-              class="hidden px-4 py-2 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
+              class="hidden px-4 mx-4 py-2 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +169,7 @@
             <a
               href="http://localhost/NfsAcademy_wp/boutique/"
               target="_blank"
-              class="hidden px-4 py-2 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
+              class="hidden px-4 mx-4 py-2 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -214,7 +214,7 @@
             <NuxtLink
               v-if="isLoggedIn"
               to="/profil"
-              class="items-center hidden px-4 py-2 mx-8 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
+              class="items-center hidden px-4 py-2 mx-4 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -235,7 +235,7 @@
             <button
               v-if="isLoggedIn"
               @click="logout"
-              class="hidden px-4 py-2 mx-8 text-white rounded-full lg:flex hover:bg-red-600 hover:text-white"
+              class="hidden px-4 py-2 mx-4 text-white rounded-full lg:flex hover:bg-red-600 hover:text-white"
             >
               <svg
                 class="w-6 h-6 mx-2 text-white dark:text-white"
