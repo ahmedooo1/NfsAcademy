@@ -5,6 +5,28 @@
       v-if="guide"
       class="flex flex-col items-center justify-center w-5/6 p-6 m-auto mt-10 bg-white rounded-lg shadow md:w-3/4 sm:w-11/12 dark:text-slate-200 dark:bg-slate-900"
     >
+      <button
+      title="Signaler le guide"
+        @click="reportGuide"
+        class="right-0 flex items-center justify-around mt-4 ml-auto text-red-500 border border-red-500 rounded-full w-11 h-11"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 m-2 text-lg text-red-500 fill-current"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5"
+          />
+        </svg>
+
+      </button>
+
       <h1 class="mb-4 text-3xl font-semibold">{{ guide.title }}</h1>
       <img
         :src="guide.imageUrl"
@@ -85,6 +107,28 @@ export default {
   },
 
   methods: {
+    async reportGuide() {
+      try {
+        // Vous pouvez ajouter ici une logique pour afficher une confirmation ou une boîte de dialogue à l'utilisateur
+        // demandant la raison du signalement avant de le soumettre.
+
+        // Ensuite, envoyez une requête à votre API pour signaler le guide.
+        const authToken = localStorage.getItem("token");
+        const headers = { Authorization: `Bearer ${authToken}` };
+        await this.$axios.post(
+          `/api/v1/guides/${this.guide._id}/report`,
+          {},
+          { headers }
+        );
+
+        // Affichez un message de confirmation à l'utilisateur
+        this.$toast.success("Le guide a été signalé avec succès !");
+      } catch (error) {
+        // Gérez les erreurs ici, par exemple, affichez un message d'erreur à l'utilisateur
+        console.error(error);
+        this.$toast.error("Veuillez vous connectez pour pouvoir signaler le guide !");
+      }
+    },
     async editGuide() {
       // Redirigez l'utilisateur vers la page de modification avec l'ID du guide
       this.$router.push(`/guides/edit/${this.guide._id}`);
