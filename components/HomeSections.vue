@@ -134,7 +134,7 @@
           <img
             src="../assets/images/boy-studying-onlinepng.png"
             alt="studyonline"
-            class="object-contain  h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 sm:block"
+            class="object-contain h-80 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 sm:block"
           />
         </div>
       </div>
@@ -337,6 +337,23 @@ export default {
   components: {
     CookiesNotice,
   },
+   data() {
+    return {
+      keywords: "Web dev, Graphisme, Mode de vie, Marketing, Compétences, Tutoriels, Guides, Informatique, Réseaux, Programmation",
+    };
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.keywords,
+        },
+      ],
+    };
+  },
+ 
   methods: {
     scrollToQuiSommesNous() {
       const quiSommesNous = document.querySelector("#qui-sommes-nous");

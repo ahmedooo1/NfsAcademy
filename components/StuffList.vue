@@ -192,6 +192,47 @@
 import { ServerTable, ClientTable, Event } from "vue-pagination-2";
 
 export default {
+   head() {
+    return {
+      title: "Guides en ligne - Découvrez les meilleurs conseils en web dev, graphisme, mode de vie et marketing",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Explorez nos guides en ligne sur différents domaines tels que le développement web, le graphisme, le mode de vie, le marketing et bien plus encore. Trouvez des conseils et des astuces utiles pour réussir dans ces domaines.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "guides en ligne, web dev, graphisme, mode de vie, marketing, conseils, astuces, tutoriels",
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "Guides en ligne - Découvrez les meilleurs conseils en web dev, graphisme, mode de vie et marketing",
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "Explorez nos guides en ligne sur différents domaines tels que le développement web, le graphisme, le mode de vie, le marketing et bien plus encore. Trouvez des conseils et des astuces utiles pour réussir dans ces domaines.",
+        },
+        // {
+        //   hid: "og:image",
+        //   property: "og:image",
+        //   content: "https://www.example.com/og-image.jpg", // Remplacez par l'URL de votre image
+        // },
+        // {
+        //   hid: "og:url",
+        //   property: "og:url",
+        //   content: "https://www.example.com/guides", // URL de cette page
+        // },
+      ],
+    };
+  },
+
   components: {
     Pagination: ClientTable,
   },
