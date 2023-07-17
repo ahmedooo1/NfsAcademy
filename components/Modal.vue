@@ -20,14 +20,14 @@
       >
 
       <div
-        class="dark:text-slate-200 dark:bg-slate-900 z-50 inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        class="z-50 inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:text-slate-200 dark:bg-slate-900 sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
       >
         <div
-          class="dark:text-slate-200 dark:bg-slate-900 px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse"
+          class="px-4 py-3 dark:text-slate-200 dark:bg-slate-900 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse"
         >
           <button
             type="button"
-            class="dark:text-slate-200 dark:bg-slate-900 inline-flex items-center justify-center px-4 py-2 -ml-4 -mr-2 text-gray-400 bg-white rounded-md shadow-sm hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class="inline-flex items-center justify-center px-4 py-2 -ml-4 -mr-2 text-gray-400 bg-white rounded-md shadow-sm dark:text-slate-200 dark:bg-slate-900 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             @click="closeModal"
           >
             <span class="sr-only">Fermer</span>
@@ -200,7 +200,8 @@
                   class="block w-full rounded-md border-0 py-1.5 dark:text-slate-200 dark:bg-slate-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              <div>
+              
+            </div><div>
                 <label
                   for="passwordConfirmation"
                   class="block text-sm font-medium leading-6 text-gray-900 dark:text-slate-200 dark:bg-slate-900"
@@ -220,13 +221,12 @@
                 </div>
                 <div class="text-red-500">{{ passwordError }}</div>
               </div>
-            </div>
             <div class="mt-2">
               <input
                 type="checkbox"
                 v-model="acceptTerms"
                 required
-                class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out dark:text-slate-200 dark:bg-slate-900"
+                class="w-4 h-4 text-indigo-600 transition duration-150 ease-in-out form-checkbox dark:text-slate-200 dark:bg-slate-900"
               />
               <label
                 for="acceptTerms"

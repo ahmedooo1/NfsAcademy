@@ -79,7 +79,7 @@
                   "
                 ></path>
               </svg>
-              Home
+              Accueil
             </div>
           </NuxtLink>
 
@@ -107,7 +107,7 @@
             </button> -->
 
             <NuxtLink to="/" class="w-full py-4 text-center text-white hover:bg-blue-600">
-              Home
+              Accueil
             </NuxtLink>
             <NuxtLink
               to="/guidesList"
@@ -148,7 +148,7 @@
           <div class="flex items-center justify-between md:ml-6">
             <NuxtLink
               to="/guidesList"
-              class="hidden px-4 mx-4 py-2 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
+              class="hidden px-4 py-2 mx-4 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +169,7 @@
             <a
               href="http://localhost/NfsAcademy_wp/boutique/"
               target="_blank"
-              class="hidden px-4 mx-4 py-2 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
+              class="hidden px-4 py-2 mx-4 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
