@@ -10,7 +10,7 @@
         <div class="mb-4">
           <label class="block mb-2 text-sm font-bold" for="title"> Titre </label>
           <input
-            class="w-full px-3 py-2 dark:text-black leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+            class="w-full px-3 py-2 leading-tight border rounded shadow appearance-none dark:text-black focus:outline-none focus:shadow-outline"
             id="title"
             type="text"
             placeholder="Titre de l'article"
@@ -35,8 +35,8 @@
                 'searchreplace visualblocks code fullscreen',
                 'insertdatetime media table paste code help wordcount',
               ],
-              toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
+                toolbar:
+                'undo redo | formatselect | bold italic forecolor backcolor | \
            alignleft aligncenter alignright alignjustify | \
            bullist numlist outdent indent | removeformat | help',
             }"
