@@ -8,7 +8,9 @@
         class="flex flex-col items-center justify-center w-5/6 p-6 m-auto mt-10 bg-white rounded-lg shadow md:w-3/4 sm:w-11/12 dark:text-slate-200 dark:bg-slate-900"
       >
         <div class="mb-4">
-          <label class="block mb-2 text-sm font-bold" for="title"> Titre </label>
+          <label class="block mb-2 text-sm font-bold" for="title">
+            Titre
+          </label>
           <input
             class="w-full px-3 py-2 leading-tight border rounded shadow appearance-none dark:text-black focus:outline-none focus:shadow-outline"
             id="title"
@@ -35,7 +37,7 @@
                 'searchreplace visualblocks code fullscreen',
                 'insertdatetime media table paste code help wordcount',
               ],
-                toolbar:
+              toolbar:
                 'undo redo | formatselect | bold italic forecolor backcolor | \
            alignleft aligncenter alignright alignjustify | \
            bullist numlist outdent indent | removeformat | help',
@@ -62,6 +64,9 @@ import Editor from "@tinymce/tinymce-vue";
 export default {
   components: {
     Editor,
+  },
+  meta: {
+    auth: true,
   },
   async asyncData({ params, $axios }) {
     const { id } = params;
