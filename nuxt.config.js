@@ -56,14 +56,14 @@ export default {
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://nfs-academy-api.hop.sh/'
+    baseURL: 'https://nodeapi-mf06.onrender.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
 
   },
-  router: {
+  router: { 
     middleware: ['auth']
   },
   
