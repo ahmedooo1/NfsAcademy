@@ -1,4 +1,7 @@
 export default {
+  server: {
+  port: 4000
+},
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'NfsAcademy',
@@ -56,7 +59,7 @@ export default {
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:3000'
+    baseURL: 'https://api-nfs-academy.aa-world.store'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
