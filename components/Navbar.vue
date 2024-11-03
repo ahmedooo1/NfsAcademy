@@ -115,13 +115,13 @@
             >
               Guides
             </NuxtLink>
-            <a
+            <!-- <a
               href="http://localhost/NfsAcademy_wp/boutique/"
               class="w-full py-4 text-center text-white hover:bg-blue-600"
               target="_blank"
             >
               Boutique
-            </a>
+            </a> -->
             <button
               v-if="!isLoggedIn"
               @click="openModal"
@@ -166,7 +166,7 @@
               </svg>
               Guides
             </NuxtLink>
-            <a
+            <!-- <a
               href="http://localhost/NfsAcademy_wp/boutique/"
               target="_blank"
               class="hidden px-4 py-2 mx-4 text-white rounded-full lg:flex hover:bg-white hover:text-gray-800"
@@ -187,7 +187,7 @@
               </svg>
 
               Boutique
-            </a>
+            </a> -->
             <button
               v-if="!isLoggedIn"
               @click="openModal"

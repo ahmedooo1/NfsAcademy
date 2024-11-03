@@ -5,7 +5,7 @@
       v-if="guide"
       class="flex flex-col items-center justify-center w-5/6 p-6 m-auto mt-10 bg-white rounded-lg shadow md:w-3/4 sm:w-11/12 dark:text-slate-200 dark:bg-slate-900"
     >
-      <button
+      <button v-if="$store.getters.isLoggedIn"
       title="Signaler le guide"
         @click="reportGuide"
         class="right-0 flex items-center justify-around mt-4 ml-auto text-red-500 border border-red-500 rounded-full w-11 h-11"

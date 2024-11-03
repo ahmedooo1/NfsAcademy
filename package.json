@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "node --openssl-legacy-provider node_modules/nuxt/bin/nuxt.js dev",
+    "build": "node --openssl-legacy-provider node_modules/nuxt/bin/nuxt.js build",
+    "start": "node --openssl-legacy-provider node_modules/nuxt/bin/nuxt.js start",
     "generate": "nuxt generate"
   },
   "dependencies": {
